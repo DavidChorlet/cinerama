@@ -1,0 +1,93 @@
+@font-face{
+    font-family: 'Brotherhood.ttf';
+    src: url(../fonts/brotherhood/Brotherhood.ttf) format("truetype");
+}
+header,.hat{
+    font-family: 'Brotherhood.ttf';
+}
+h1{
+    text-align: center;
+}
+footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.card{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+.window{
+    padding: 30px;
+    margin: 10px;
+    border: 4px solid #0A4380;
+    border-radius: 30px;
+    background-color: #3D97DA;
+}
+.exercice{
+
+    padding: 40px;
+    margin: 20px;
+    border: 10px solid #000000;
+    border-radius: 40px;
+    color: #000000;
+    background-color: #fffff;
+    text-align: justify;
+}
+.hat{
+    padding: 20px;
+    margin: 16px;
+    border: 8px solid #0A4380;
+    border-radius: 15px;
+    border-bottom-right-radius: 90px;
+    border-bottom-left-radius: 90px;
+    color: #000000;
+    background-color: #fffff;
+    text-align: center;
+}
+.form{
+    padding: 12px;
+    margin: 12px;
+    border: 8px solid #0A4380;
+    border-radius: 4px;
+    color: #000000;
+    background-color: #fffff;
+    text-align: center;
+}
+.link{
+    color: #000000;
+}
+.link:hover{
+    color: #FFFFFF;
+}
+.linky{
+    color: #000000;
+}
+.linky:hover{
+    color: #09EEB2;
+}
+legend{
+    border: 6px solid #0f2d56;
+    border-radius: 10px;
+    background-color: #80cbc4;
+}
+th{
+    border: 4px solid #3041A1;
+    border-collapse: collapse;
+    background-color: #80cbc4;
+    color: crimson;
+}
+td{
+    border: 2px solid #3041A1;
+    border-collapse: collapse;
+    background-color: #e0f2f1;
+    color: black;
+}
+thead{
+    border: 4px solid #3041A1;
+    text-align: center;
+}
+tbody{
+    border: 4px solid #3041A1;
+    text-align: center;
+}	
