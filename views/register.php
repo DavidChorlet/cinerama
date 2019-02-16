@@ -1,52 +1,38 @@
 <?php
-include '../models/users.php';
-include '../controllers/registerCtrl.php';
 include 'header.php';
+include '../controllers/registerCtrl.php';
 ?>
-<div class="container-fluid">
-    <div class="row">
-        <div class="text-center col-12" >
-            <div class="hat">
-                <h1>Rejoindre le Crew</h1>
-                <?php if ($isSuccess) { ?>
-                    <p class="text-success">Enregistrement effectué !</p>
-                    <?php
-                }
-                if ($isError) {
-                    ?>
-                    <p class="text-danger">Désolé, mais votre enregistrement a échoué.</p>
-                <?php } ?>
-            </div>
-            <form method="POST" action="register.php">
-                <fieldset class="window">
-                    <div class="form-group">
-                        <div class="form-row">             
-                            <label for="nickname" class="col-sm-2 col-form-label">Pseudo:</label>
-                            <div class="col-sm-10">
-                                <input name="nickname" type="text" class="form-control" id="nickname" placeholder="Pseudo" value="<?= isset($nickname) ? $nickname : '' ?>"/>
-                                <p class="text-danger"><?= isset($formError['nickname']) ? $formError['nickname'] : '' ?></p>
-                            </div>
-                        </div>
-                        <div class="form-row">             
-                            <label for="mail" class="col-sm-2 col-form-label">Adresse mail :</label>
-                            <div class="col-sm-10">
-                                <input name="mail" type="email" class="form-control" id="mail" placeholder="E-mail" value="<?= isset($mail) ? $mail : '' ?>"/>
-                                <p class="text-danger"><?= isset($formError['mail']) ? $formError['mail'] : '' ?></p>
-                            </div>
-                        </div>                     
-                        <div class="form-row">             
-                            <label for="password" class="col-sm-2 col-form-label">Mot de passe :</label>
-                            <div class="col-sm-10">
-                                <input name="password" type="password" class="form-control" id="password" placeholder="Mot de passe" value="<?= isset($password) ? $password : '' ?>"/>
-                                <p class="text-danger"><?= isset($formError['$password']) ? $formError['$password'] : '' ?></p>
-                            </div>
-                        </div>                                    
-                        <input class="btn btn-black" type="submit" value="Valider" name='submit'/>
-                    </div>
-                </fieldset>
-            </form>
+<div class="container">
+    <h1>Inscription sur notre super site</h1>
+    <form method="POST" action="#" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="mail">Courriel</label>
+            <input type="mail" name="mail" class="form-control" id="mail"  placeholder="Renseignez votre courriel" />
+            <div class="mailMessage"></div>
         </div>
-    </div>
+        <div class="form-group">
+            <label for="mailVerify">Courriel (confirmation)</label>
+            <input type="mail" name="mailVerify" class="form-control" id="mailVerify"  placeholder="Confirmez votre courriel" />
+        </div>
+        <div class="form-group">
+            <label for="nickname">Pseudo</label>
+            <input type="text" name="nickname" class="form-control" id="nickname"  placeholder="Renseignez votre pseudo" />
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input type="password" name="password" class="form-control" id="password"  placeholder="Renseignez votre mot de passe" />
+        </div>
+        <div class="form-group">
+            <label for="passwordVerify">Mot de passe (confirmation)</label>
+            <input type="password" name="passwordVerify" class="form-control" id="passwordVerify"  placeholder="Confirmez votre mot de passe" />
+        </div>
+        <div class="form-group dropzone">
+            <label for="avatar">Avatar</label>
+            <input type="file" name="file" id="file" />
+        </div>
+        <button type="submit" name="register" class="btn btn-primary">S'enregistrer</button>
+    </form>
 </div>
+<script src="assets/js/script.js" type="text/javascript"></script>
 <?php include 'footer.php'; ?>
 

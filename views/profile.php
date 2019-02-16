@@ -1,7 +1,6 @@
 <?php
-include '../models/users.php';
-include '../controllers/profileCtrl.php';
 include 'header.php';
+include '../controllers/profileCtrl.php';
 ?>
 <div class="container-fluid">
     <div class="row">

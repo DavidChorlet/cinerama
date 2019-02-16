@@ -1,69 +1,59 @@
 <?php
 
-//déclaration des regex :
-$nameRegex = "/([a-zA-Z\- ])/";
+if (isset($_POST['mailTest'])) { //Appel AJAX pour le mail.
+    include '../models/users.php';
+    $user = new users();
+    $user->mail = htmlspecialchars($_POST['mailTest']);
+    echo $user->checkFreeMail();
+} else { //Validation du formulaire
 
-//création d'un tableau où l'on vient stocker les erreurs :
-$formError = array();
-$isSuccess = FALSE;
-$isError = FALSE;
 
-//si le submit existe
-if (isset($_POST['submit'])) {
-    //si $_POST['nickname'] existe
-    if (isset($_POST['nickname'])) {
-        //si $_POST['nickname'] n'est pas vide
+    $user = new users();
+//J'initialise mon tableau d'erreur.
+    $formError = array();
+//On initialise les variables de stockage des informations pour éviter d'avoir des erreurs dans la vue.
+    $nickname = '';
+    $mail = '';
+
+//Quand on s'enregistre
+    if (isset($_POST['register'])) {
+        //On vérifie que le pseudo n'est pas vide.
         if (!empty($_POST['nickname'])) {
-            //on vérifie si $_POST['nickname'] respecte la regex
-            if (preg_match($nameRegex, $_POST['nickname'])) {
-                $nickname = htmlspecialchars($_POST['nickname']);
-                //sinon on stock un message dans le tableau formError    
+            $nickname = htmlspecialchars($_POST['nickname']);
+        } else {
+            $formError['nickname'] = 'Veuillez renseigner un pseudo';
+        }
+        //On vérifie que l'adresse mail est renseigné, qu'il correspond à la confirmation et qu'il a la bonne forme.
+        if (!empty($_POST['mail']) && !empty($_POST['mailVerify'])) {
+            if ($_POST['mail'] == $_POST['mailVerify']) {
+                if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
+                    $mail = htmlspecialchars($_POST['mail']);
+                } else {
+                    $formError['mail'] = 'Le courriel n\'est pas valide';
+                }
             } else {
-                $formError['nickname'] = 'Saisie invalide.';
+                $formError['mail'] = 'Les courriels ne sont pas identiques';
             }
         } else {
-            $formError['nickname'] = 'Erreur, veuillez remplir le champ.';
+            $formError['mail'] = 'Veuillez renseigner un courriel';
+            $formError['mailVerify'] = 'Veuillez confirmer le courriel';
         }
-    }
-
-
-    if (isset($_POST['mail'])) {
-        if (!empty($_POST['mail'])) {
-            //emploi de la fonction PHP filter_var pour valider l'adresse mail
-            if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
-                $mail = htmlspecialchars($_POST['mail']);
+        //On vérifie que le mot de passe est renseigné et qu'il est identique à la confirmation. On le hash avant de le mettre en base de données. 
+        if (!empty($_POST['password']) && !empty($_POST['passwordVerify'])) {
+            if ($_POST['password'] == $_POST['passwordVerify']) {
+                $user->password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             } else {
-                $formError['mail'] = 'Saisie invalide.';
+                $formError['password'] = 'Les mots de passe ne sont pas identiques';
             }
         } else {
-            $formError['mail'] = 'Erreur, veuillez remplir le champ.';
+            $formError['password'] = 'Veuillez renseigner un mot de passe';
+            $formError['passwordVerify'] = 'Veuillez confirmer le mot de passe';
         }
-    }
-    if (isset($_POST['password'])) {
-        if (!empty($_POST['password'])) {
-            if (preg_match($nameRegex, $_POST['password'])) {
-                $password = htmlspecialchars($_POST['password']);
-            } else {
-                $formError['password'] = 'Saisie invalide.';
-            }
-        } else {
-            $formError['password'] = 'Erreur, veuillez remplir le champ.';
-        }
-    }
-    //si mon tableau ne contient aucune erreur
-    if (count($formError) == 0) {
-        //Instanciation de l'objet users. 
-        //$users devient une instance de la classe users
-        //la méthode magique construct est appelée automatiquement grâce au mot clé new.
-        $users = new users();
-        $users->nickname = $nickname;
-        $users->mail = $mail;
-        $users->password = $password;
-
-        if ($users->addUsers()) {
-            $isSuccess = TRUE;
-        } else {
-            $isError = TRUE;
+        //Si il n'y a pas d'erreur, j'enregistre l'utilisateur
+        if (count($formError) == 0) {
+            $user->mail = $mail;
+            $user->nickname = $nickname;
+            $user->addUsers();
         }
     }
 }

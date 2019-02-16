@@ -1,7 +1,7 @@
 <?php
-include '../models/users.php';
-include '../controllers/usersListCtrl.php';
+
 include 'header.php';
+include '../controllers/usersListCtrl.php';
 ?>
 <div class="container-fluid">
     <div class="row">
