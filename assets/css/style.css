@@ -16,6 +16,7 @@ footer{
     text-align: center;
     padding: 10px;
     margin: 10px;
+    font-family: Raleway,sans serif;
 }
 .window{
     padding: 30px;
@@ -23,6 +24,7 @@ footer{
     border: 4px solid #0A4380;
     border-radius: 30px;
     background-color: #3D97DA;
+    font-family: Raleway,sans serif;
 }
 .exercice{
 
@@ -75,13 +77,13 @@ th{
     border: 4px solid #3041A1;
     border-collapse: collapse;
     background-color: #80cbc4;
-    color: crimson;
+    color: black;
 }
 td{
     border: 2px solid #3041A1;
     border-collapse: collapse;
-    background-color: #e0f2f1;
-    color: black;
+    background-color: #FFFFFF;
+    color: #070000;
 }
 thead{
     border: 4px solid #3041A1;
@@ -90,4 +92,7 @@ thead{
 tbody{
     border: 4px solid #3041A1;
     text-align: center;
-}	
+}
+table{
+    font-family: Raleway,sans serif;
+}

@@ -30,7 +30,9 @@ if (isset($_POST['login'])) {
                 $userInfo = $user->getUserInfo();
                 $_SESSION['nickname'] = $userInfo->nickname;
                 $_SESSION['mail'] = $userInfo->mail;
+                $_SESSION['password'] = $userInfo->password;
                 $_SESSION['idGroup'] = $userInfo->idGroup;
+                $_SESSION['id'] = $userInfo->id;
                 $_SESSION['isConnect'] = true;
                 header('Location:index.php');
                 exit();

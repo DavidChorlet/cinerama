@@ -61,20 +61,21 @@ if (isset($_POST['submit'])) {
 
     //on vérifie qu'il n'y a aucune erreur
     if (count($formError) == 0) {
+        $users->id = $_SESSION['id'];
         $users->nickname = $nickname;
         $users->mail = $mail;
         $users->password = $password;
-       
-       
-     
-        $users->profileUpdate();
+        
 
         if ($users->profileUpdate()) {
+            $_SESSION['nickname'] = $nickname;
+            $_SESSION['mail'] = $mail;
+            $_SESSION['password'] = $password;
             $isSuccess = TRUE;
         } else {
             $isError = TRUE;
         }
     }
+  
 }
-?>
 

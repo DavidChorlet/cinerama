@@ -43,6 +43,9 @@ include '../controllers/headerCtrl.php';
                         <li class="nav-item active">
                             <a class="nav-link" href="media.php">Autour du cinéma<span class="sr-only">(current)</span></a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="usersList.php">Liste des utilisateurs<span class="sr-only">(current)</span></a>
+                        </li>
                     <?php } else { ?>
                         <li class="nav-item active">
                             <a class="nav-link" href="login.php">Connexion <span class="sr-only">(current)</span></a>
@@ -56,9 +59,10 @@ include '../controllers/headerCtrl.php';
                         <li class="nav-item active">
                             <a class="nav-link" href="media.php">Autour du cinéma<span class="sr-only">(current)</span></a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="usersList.php">Liste des utilisateurs<span class="sr-only">(current)</span></a>
+                        </li>
                     <?php } ?>
                 </ul>
             </div>
         </nav>
-
-
