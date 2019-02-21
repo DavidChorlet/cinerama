@@ -7,8 +7,6 @@ if (!empty($_GET['id'])) {
     $isUser = $users->profileUser();
 }
 
-
-
 //Déclaration des regex :
 $nameRegex = "/([a-zA-Z\- ])/";
 
@@ -65,7 +63,7 @@ if (isset($_POST['submit'])) {
         $users->nickname = $nickname;
         $users->mail = $mail;
         $users->password = $password;
-        
+
 
         if ($users->profileUpdate()) {
             $_SESSION['nickname'] = $nickname;
@@ -76,6 +74,6 @@ if (isset($_POST['submit'])) {
             $isError = TRUE;
         }
     }
-  
-}
 
+
+}

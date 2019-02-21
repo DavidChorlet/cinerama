@@ -32,11 +32,12 @@ if (isset($_POST['login'])) {
                 $_SESSION['mail'] = $userInfo->mail;
                 $_SESSION['password'] = $userInfo->password;
                 $_SESSION['idGroup'] = $userInfo->idGroup;
-                $_SESSION['id'] = $userInfo->id;
+                $_SESSION['id'] = $userInfo->idUser;
                 $_SESSION['isConnect'] = true;
                 header('Location:index.php');
                 exit();
             }
         }
     }
+
 }

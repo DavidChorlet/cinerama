@@ -80,7 +80,7 @@ class users {
 
 //méthode permettant de modifier le profil d'un utilisateur.
     public function profileUpdate() {
-        $query = 'UPDATE `cine_users` SET `nickname`= :nickname, `mail`= :mail, `password`= :password WHERE `cine_users` . `id`= :id';
+        $query = 'UPDATE `cine_users` SET `nickname`= :nickname, `mail`= :mail, `password`= :password WHERE `cine_users`.`id`= :id';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':nickname', $this->nickname, PDO::PARAM_STR);
         $queryResult->bindValue(':mail', $this->mail, PDO::PARAM_STR);
@@ -89,13 +89,15 @@ class users {
         return $queryResult->execute();
     }
 
-    //méthode permettant de supprimer un patient et ses rendez-vous.
+    /**
+     * Méthode qui permet à l'utilisateur de supprimer son compte
+     */
     public function deleteUser() {
-        $query = 'DELETE FROM `cine_users` '
-                . 'WHERE `id` = :id';
+        $query = 'DELETE FROM `cine_users` WHERE `cine_users`.`id` = id';
         $deleteUser = $this->db->prepare($query);
-        //bindvalue = attribut la valeur
         $deleteUser->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $deleteUser->execute();
+      }
 }
-}
+
+ 
