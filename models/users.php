@@ -93,11 +93,25 @@ class users {
      * Méthode qui permet à l'utilisateur de supprimer son compte
      */
     public function deleteUser() {
-        $query = 'DELETE FROM `cine_users` WHERE `cine_users`.`id` = id';
+        $query = 'DELETE FROM `cine_users` WHERE `id` = :id';
         $deleteUser = $this->db->prepare($query);
         $deleteUser->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $deleteUser->execute();
       }
+      
+//************************************************* 
+      
+ //méthode permettant d'ajouter un article dans la base de données.
+    public function addPosts() {
+        $query = 'INSERT INTO `cine_posts` (``,``, ``) '
+                . 'VALUES (:, :, :)';
+        $queryResult = $this->db->prepare($query);
+        $queryResult->bindValue('', $this->nickname, PDO::PARAM_STR);
+        $queryResult->bindValue( '', $this->mail, PDO::PARAM_STR);
+        $queryResult->bindValue('', $this->password, PDO::PARAM_STR);
+        return $queryResult->execute();
+    }
+      
 }
 
  

@@ -2,6 +2,19 @@
 include 'header.php';
 include '../controllers/profileCtrl.php';
 ?>
+    <?php
+            if (isset($_GET['idDelete'])) {
+                if ($isDelete) {
+                    session_destroy();
+                    header('Location:index.php');
+                    exit();
+                } else {
+                    ?>
+                    <p class="text-danger">Echec de la suppression !</p>
+                    <?php
+                }
+            }
+            ?>
 <div class="container-fluid">
     <div class="row">
         <div class="text-center col-12">
@@ -12,6 +25,7 @@ include '../controllers/profileCtrl.php';
                 <table class="table">
                     <thead>
                         <tr>
+                            <th scope="col">id</th>
                             <th scope="col">Pseudo</th>
                             <th scope="col">Adresse Mail</th>
                             <th scope="col">Mot de passe</th>
@@ -19,6 +33,7 @@ include '../controllers/profileCtrl.php';
                     </thead>
                     <tbody>
                         <tr>
+                            <td><?= $_SESSION['id']; ?></td>
                             <td><?= $_SESSION['nickname']; ?></td>
                             <td><?= $_SESSION['mail']; ?></td>
                             <td><?= $_SESSION['password']; ?></td>
@@ -68,16 +83,10 @@ if ($isError) {
         </div>
     </fieldset>
 </form>
-    
-    <p>Si vous êtes sûr de vouloir supprimer votre compte, cliquer sur le bouton ci-dessous.</p>
-    <form method="POST" action="delete.php">
-        <button type="submit" name="delete" class="btn red" id="delete">SUPPRIMER MON COMPTE</button>
-    </form>
-    
-    
-    <div class="hat">
-        <div><a href="?action=deconnexion">Déconnexion</a></div>
-    </div>
+<a class="btn btn-danger" href="profile.php?idDelete=<?= $_SESSION['id']; ?>">Supprimer le profil</a>
+<div class="hat">
+    <div><a href="?action=deconnexion">Déconnexion</a></div>
+</div>
 <?php
 include 'footer.php';
 ?>

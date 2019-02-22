@@ -1,11 +1,22 @@
 <?php
 
-$isUser = FALSE;
+
 $users = new users();
+
+$isDelete = FALSE;
+if (!empty($_GET['idDelete'])) {
+    $users->id = htmlspecialchars($_GET['idDelete']);
+    $isDelete = $users->deleteUser();
+    }
+
+$isUser = FALSE;
 if (!empty($_GET['id'])) {
     $users->id = htmlspecialchars($_GET['id']);
     $isUser = $users->profileUser();
 }
+
+
+
 
 //Déclaration des regex :
 $nameRegex = "/([a-zA-Z\- ])/";
@@ -65,6 +76,8 @@ if (isset($_POST['submit'])) {
         $users->password = $password;
 
 
+
+
         if ($users->profileUpdate()) {
             $_SESSION['nickname'] = $nickname;
             $_SESSION['mail'] = $mail;
@@ -74,6 +87,5 @@ if (isset($_POST['submit'])) {
             $isError = TRUE;
         }
     }
-
-
+   
 }
