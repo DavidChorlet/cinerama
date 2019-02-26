@@ -7,7 +7,7 @@ include '../controllers/registerCtrl.php';
         <div class="text-center col-12" >
             <div class="hat">
                 <h1>Inscription</h1></div>
-            <form method="POST" action="#" enctype="multipart/form-data">
+            <form method="POST" action="#">
                 <fieldset class="window">
                     <div class="form-group">
                         <label for="mail">Mail</label>
@@ -36,7 +36,7 @@ include '../controllers/registerCtrl.php';
         </div>
     </div>
 </div>
-<div class="container">
+<!--<div class="container">
     <div class="row">
         <div class="text-center col-12" >
             <form method="post" action="picture.php" enctype="multipart/form-data">
@@ -48,7 +48,7 @@ include '../controllers/registerCtrl.php';
             </form>
         </div>
     </div>
-</div> 
+</div> -->
 <script src="assets/js/script.js" type="text/javascript"></script>
 <?php include 'footer.php'; ?>
 

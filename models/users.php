@@ -11,7 +11,7 @@ class users {
 
     public function __construct() {
         try {
-            $this->db = new PDO('mysql:host=cinerama;dbname=cinedave;charset=utf8', 'chorlet', 'dddd');
+            $this->db = new PDO('mysql:host=cinerama;dbname=cinedavid;charset=utf8', 'chorlet', 'dddd');
         } catch (Exception $ex) {
             $ex->getMessage();
         }
@@ -99,18 +99,7 @@ class users {
         return $deleteUser->execute();
       }
       
-//************************************************* 
-      
- //méthode permettant d'ajouter un article dans la base de données.
-    public function addPosts() {
-        $query = 'INSERT INTO `cine_posts` (``,``, ``) '
-                . 'VALUES (:, :, :)';
-        $queryResult = $this->db->prepare($query);
-        $queryResult->bindValue('', $this->nickname, PDO::PARAM_STR);
-        $queryResult->bindValue( '', $this->mail, PDO::PARAM_STR);
-        $queryResult->bindValue('', $this->password, PDO::PARAM_STR);
-        return $queryResult->execute();
-    }
+
       
 }
 

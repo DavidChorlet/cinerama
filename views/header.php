@@ -31,33 +31,35 @@ include '../controllers/headerCtrl.php';
                                 <?= $_SESSION['nickname']; ?>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="posts.php">Poster un article</a>
-                                <a class="dropdown-item" href="profile.php">Accèder à sa page utilisateur</a>
+                                <a class="dropdown-item" href="addmovie.php">Ajouter un film</a>
+                                <a class="dropdown-item" href="movie.php">Modifier/Supprimer un film</a>
+                                <a class="dropdown-item" href="addpost.php">Ajouter un article</a>
+                                <a class="dropdown-item" href="profile.php">Accèder à son profil</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="?action=deconnexion">Déconnexion</a>
                             </div>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="posts.php">Lire des articles<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="postsList.php">Liste des articles<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="media.php">Autour du cinéma<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="moviesList.php">Liste des films<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="usersList.php">Liste des utilisateurs<span class="sr-only">(current)</span></a>
                         </li>
                     <?php } else { ?>
                         <li class="nav-item active">
-                            <a class="nav-link" href="login.php">Connexion <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="login.php">Connexion<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="register.php">Inscription <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="posts.php">Lire des articles<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="postsList.php">Liste des articles<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="media.php">Autour du cinéma<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="moviesList.php">Liste des films<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="usersList.php">Liste des utilisateurs<span class="sr-only">(current)</span></a>
