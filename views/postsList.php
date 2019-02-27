@@ -11,11 +11,11 @@ include '../controllers/postsListCtrl.php';
             <h1>Liste des articles</h1>
         </div>
     </div>
-    
-    
-    
-    
-    </div>
+
+
+
+
+</div>
 <?php
 if (isset($resultList)) {
     ?>
@@ -23,20 +23,22 @@ if (isset($resultList)) {
 } else {
     ?>
     <div class="container">
-         <div class="row">
+        <div class="row">
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Titre:</th>
                             <th scope="col">Contenu:</th>
+                            <th scope="col">id film:</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($postsList as $posts) { ?>
                             <tr>
                                 <td><?= $posts->title ?></td> 
-                                <td><?= $posts->content ?></td> 
+                                <td><?= $posts->content ?></td>
+                                <td><?= $posts->id_cine_movies ?></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>
@@ -45,6 +47,6 @@ if (isset($resultList)) {
             ?>
         </div>
     </div>
-    </div>
+</div>
 <?php include 'footer.php';
 ?>

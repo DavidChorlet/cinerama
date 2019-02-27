@@ -1,30 +1,28 @@
 <?php
-include '../models/posts.php';
 include '../models/movies.php';
-include '../controllers/movieUpdateCtrl.php';
+include '../models/posts.php';
+include '../controllers/postUpdateCtrl.php';
 include 'header.php';
 ?>
 <div class="container-fluid">
     <div class="row">
         <div class="text-center col-12">
             <div class="hat">
-                <h1>Fiche du film</h1>
+                <h1>Fiche de l'article</h1>
             </div>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Film</th>
-                            <th scope="col">Réalisateur</th>
-                            <th scope="col">Synopsis</th>
-                        </tr>
+                            <th scope="col">Titre</th>
+                            <th scope="col">Contenu</th>
+                            </tr>
                     </thead>
-                    <?php if ($isMovie) { ?>
+                    <?php if ($isPost) { ?>
                         <tbody>
                             <tr>
-                                <td><?= $movies->title ?></td>
-                                <td><?= $movies->director ?></td>
-                                <td><?= $movies->content ?></td>
+                                <td><?= $posts->title ?></td>
+                                <td><?= $posts->content ?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -43,23 +41,17 @@ include 'header.php';
                 ?>
                 <p class="text-danger">Désolé, les modifications n'ont pu être enregistrées.</p>
             <?php } ?>
-                <form method="POST" action="movieUpdate.php?id=<?= $movies->id ?>">
+                <form method="POST" action="postUpdate.php">
                 <fieldset class="window">
                     <div class="form-group">
                         <div class="form-row">             
-                            <label for="title" class="col-sm-2 col-form-label">Titre du film</label>
+                            <label for="title" class="col-sm-2 col-form-label">Titre</label>
                             <div class="col-sm-10">
                                 <input name="title" type="text" class="form-control" id="title" placeholder="Titre" value="<?= isset($title) ? $title : '' ?>"/>
                                 <p class="text-danger"><?= isset($formError['title']) ? $formError['title'] : '' ?></p>
                             </div>
                         </div>
-                        <div class="form-row">             
-                            <label for="director" class="col-sm-2 col-form-label">Réalisateur</label>
-                            <div class="col-sm-10">
-                                <input name="director" type="text" class="form-control" id="director" placeholder="Réalisateur" value="<?= isset($director) ? $director : '' ?>"/>
-                                <p class="text-danger"><?= isset($formError['director']) ? $formError['director'] : '' ?></p>
-                            </div>
-                        </div>
+                       
                         <div class="form-row">             
                             <label for="content" class="col-sm-2 col-form-label">Synopsis</label>
                             <div class="col-sm-10">
@@ -72,3 +64,4 @@ include 'header.php';
                 </fieldset>
             </form>
             <?php include 'footer.php'; ?>
+

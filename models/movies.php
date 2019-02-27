@@ -66,7 +66,7 @@ class movies {
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':title', $this->title, PDO::PARAM_STR);
         $queryResult->bindValue(':director', $this->director, PDO::PARAM_STR);
-        $queryResult->bindValue(':content', $this->director, PDO::PARAM_STR);
+        $queryResult->bindValue(':content', $this->content, PDO::PARAM_STR);
         $queryResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $queryResult->execute();
     }

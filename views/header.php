@@ -34,6 +34,7 @@ include '../controllers/headerCtrl.php';
                                 <a class="dropdown-item" href="addmovie.php">Ajouter un film</a>
                                 <a class="dropdown-item" href="movie.php">Modifier/Supprimer un film</a>
                                 <a class="dropdown-item" href="addpost.php">Ajouter un article</a>
+                                   <a class="dropdown-item" href="post.php">Modifier/Supprimer un article</a>
                                 <a class="dropdown-item" href="profile.php">Accèder à son profil</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="?action=deconnexion">Déconnexion</a>
