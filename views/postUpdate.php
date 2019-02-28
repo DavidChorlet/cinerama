@@ -1,4 +1,6 @@
 <?php
+include '../models/comments.php';
+include '../models/pictures.php';
 include '../models/movies.php';
 include '../models/posts.php';
 include '../controllers/postUpdateCtrl.php';
@@ -41,7 +43,7 @@ include 'header.php';
                 ?>
                 <p class="text-danger">Désolé, les modifications n'ont pu être enregistrées.</p>
             <?php } ?>
-                <form method="POST" action="postUpdate.php">
+                <form method="POST" action="postUpdate.php?id=<?= $posts->id ?>">
                 <fieldset class="window">
                     <div class="form-group">
                         <div class="form-row">             

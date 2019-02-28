@@ -8,12 +8,6 @@ $users = new users();
 $usersList = $users->getUsersList();
 
 
-//if (isset($_GET['id'])) {
-//    $deleteUser = NEW users();
-//    $deleteUser->id = $_GET['id'];
-//    $deleteUser = $deleteUser->deleteUser();
-//    header('location:usersList.php');
-//}
 
 
 ?>

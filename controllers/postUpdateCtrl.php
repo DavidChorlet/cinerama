@@ -49,10 +49,9 @@ if (isset($_POST['submit'])) {
         //Instanciation de l'objet patients. 
         //$patients devient une instance de la classe patients.
         //la méthode magique construct est appelée automatiquement grâce au mot clé new.
-        $posts = new posts();
+        
         $posts->title = $title;
         $posts->content = $content;
-        
         $posts->postUpdate();
         
         if ($posts->postUpdate()) {

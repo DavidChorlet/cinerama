@@ -56,10 +56,9 @@ if (isset($_POST['submit'])) {
     
     //si mon tableau ne contient aucune erreur
     if (count($formError) == 0) {
-        //Instanciation de l'objet patients. 
-        //$patients devient une instance de la classe patients.
+        //Instanciation de l'objet movies. 
+        //$movies devient une instance de la classe movies.
         //la méthode magique construct est appelée automatiquement grâce au mot clé new.
-        $movies = new movies();
         $movies->title = $title;
         $movies->director = $director;
         $movies->content = $content;

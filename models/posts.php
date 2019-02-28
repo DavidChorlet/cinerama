@@ -38,7 +38,7 @@ class posts {
         return $result;
     }
     
-    //méthode permettant de récuperer un film d'après son id.
+    //méthode permettant de récuperer un article d'après son id.
     public function profilePost() {
         $return = FALSE;
         $isOk = FALSE;

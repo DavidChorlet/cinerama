@@ -2,7 +2,6 @@
 include 'header.php';
 include '../controllers/usersListCtrl.php';
 ?>
-
 <div class="row">
     <div class="text-center col-12">
         <div class="hat">

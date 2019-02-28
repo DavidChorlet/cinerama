@@ -1,4 +1,5 @@
 <?php
+
 //déclaration des regex :
 $nameRegex = "/([a-zA-Z\- ])/";
 //création d'un tableau où l'on vient stocker les erreurs :
@@ -15,7 +16,7 @@ if (isset($_POST['submit'])) {
             //on vérifie si $_POST['lastname'] respecte la regex
             if (preg_match($nameRegex, $_POST['title'])) {
                 $title = htmlspecialchars($_POST['title']);
-            //sinon on stock un message dans le tableau formError    
+                //sinon on stock un message dans le tableau formError    
             } else {
                 $formError['title'] = 'Saisie invalide.';
             }
@@ -45,6 +46,7 @@ if (isset($_POST['submit'])) {
             $formError['content'] = 'Erreur, veuillez remplir le champ.';
         }
     }
+    
    
     
     //si mon tableau ne contient aucune erreur
@@ -57,15 +59,13 @@ if (isset($_POST['submit'])) {
         $movies->director = $director;
         $movies->content = $content;
         
-     
-        
-        if ($movies->addMovies()){
+
+
+        if ($movies->addMovies()) {
             $isSuccess = TRUE;
         } else {
             $isError = TRUE;
         }
     }
-    
-    
 }
 

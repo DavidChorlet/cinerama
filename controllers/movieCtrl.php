@@ -15,12 +15,6 @@ if (!empty($_GET['idDelete'])) {
 $moviesList = $movies->getMoviesList();
 
 
-//if (isset($_GET['id'])) {
-//    $deleteUser = NEW users();
-//    $deleteUser->id = $_GET['id'];
-//    $deleteUser = $deleteUser->deleteUser();
-//    header('location:usersList.php');
-//}
 
 
 ?>

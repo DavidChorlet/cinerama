@@ -1,6 +1,5 @@
 <?php
 
-
 $users = new users();
 
 $isDelete = FALSE;
@@ -14,9 +13,6 @@ if (!empty($_GET['id'])) {
     $users->id = htmlspecialchars($_GET['id']);
     $isUser = $users->profileUser();
 }
-
-
-
 
 //Déclaration des regex :
 $nameRegex = "/([a-zA-Z\- ])/";

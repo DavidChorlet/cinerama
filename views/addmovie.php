@@ -1,5 +1,8 @@
 <?php
+include '../models/comments.php';
+include '../models/pictures.php';
 include '../models/movies.php';
+include '../models/posts.php';
 include '../controllers/addmovieCtrl.php';
 include 'header.php';
 ?>
@@ -17,7 +20,7 @@ include 'header.php';
                     <p class="text-danger">Désolé, le film n'a pas pu être enregistré.</p>
                 <?php } ?>
             </div>
-            <form method="POST" action="addmovie.php" enctype="multipart/form-data">
+            <form method="POST" action="addmovie.php">
                 <fieldset class="window">
                     <div class="form-group">
                         <div class="form-row">             
@@ -42,12 +45,14 @@ include 'header.php';
                             </div>
                         </div>
                         
-                        <input class="btn btn-black" type="submit" value="Valider" name='submit'/>
-                    </div>
+                        <div class="form-row">
+                            <div class="col-sm-12">
+                                <input class="btn btn-black" type="submit" value="Valider" name="submit"/>
+                            </div>
+                        </div>
                 </fieldset>
             </form>
         </div>
     </div>
 </div>
-
 <?php include 'footer.php'; ?>

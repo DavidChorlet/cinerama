@@ -36,19 +36,6 @@ include '../controllers/registerCtrl.php';
         </div>
     </div>
 </div>
-<!--<div class="container">
-    <div class="row">
-        <div class="text-center col-12" >
-            <form method="post" action="picture.php" enctype="multipart/form-data">
-                <fieldset class="window">
-                    <p>Formulaire d'envoi de fichier</p>
-                    <input type="file" name="file" />
-                    <input type="submit" class="btn btn-dark" value="Envoyer une image pour avatar" />
-                </fieldset>
-            </form>
-        </div>
-    </div>
-</div> -->
 <script src="assets/js/script.js" type="text/javascript"></script>
 <?php include 'footer.php'; ?>
 
