@@ -54,14 +54,14 @@ if (isset($_POST['submit'])) {
         //Instanciation de l'objet patients. 
         //$patients devient une instance de la classe patients.
         //la méthode magique construct est appelée automatiquement grâce au mot clé new.
-        $movies = new movies();
-        $movies->title = $title;
-        $movies->director = $director;
-        $movies->content = $content;
+        $medias = new medias();
+        $medias->title = $title;
+        $medias->director = $director;
+        $medias->content = $content;
         
 
 
-        if ($movies->addMovies()) {
+        if ($medias->addMedias()) {
             $isSuccess = TRUE;
         } else {
             $isError = TRUE;

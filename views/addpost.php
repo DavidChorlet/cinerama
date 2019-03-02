@@ -1,5 +1,5 @@
 <?php
-include '../models/movies.php';
+include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/addpostCtrl.php';
 include 'header.php';
@@ -28,7 +28,6 @@ include 'header.php';
                                 <p class="text-danger"><?= isset($formError['title']) ? $formError['title'] : '' ?></p>
                             </div>
                         </div>
-                
                         <div class="form-row">             
                             <label for="content" class="col-sm-2 col-form-label">Synopsis</label>
                             <div class="col-sm-10">
@@ -36,16 +35,15 @@ include 'header.php';
                                 <p class="text-danger"><?= isset($formError['content']) ? $formError['content'] : '' ?></p>
                             </div>
                         </div>
-                       
                         <div class="form-row">
-                            <label for="id_cine_movies" class="col-sm-offset-2 col-sm-4 col-form-label">Choisir un film : </label>
+                            <label for="id_cine_medias" class="col-sm-offset-2 col-sm-4 col-form-label">Choisir un film : </label>
                             <div class="col-sm-offset-2 col-sm-4">
-                                <select name="id_cine_movies">
-                                    <?php foreach ($moviesList as $movies) { ?>
-                                        <option value="<?= $movies->id ?>"><?= $movies->title . ' ' . $movies->director ?></option>
+                                <select name="id_cine_medias">
+                                    <?php foreach ($mediasList as $medias) { ?>
+                                        <option value="<?= $medias->id ?>"><?= $medias->title . ' ' . $medias->director ?></option>
                                     <?php } ?>
                                 </select>
-                                <p class="text-danger"><?= isset($formError['id_cine_movies']) ? $formError['id_cine_movies'] : '' ?></p>
+                                <p class="text-danger"><?= isset($formError['id_cine_medias']) ? $formError['id_cine_medias'] : '' ?></p>
                             </div>
                         </div>
                         <input class="btn btn-black" type="submit" value="Valider" name='submit'/>
@@ -55,6 +53,4 @@ include 'header.php';
         </div>
     </div>
 </div>
-
 <?php include 'footer.php'; ?>
-

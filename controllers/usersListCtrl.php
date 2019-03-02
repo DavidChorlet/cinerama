@@ -7,8 +7,5 @@ $users = new users();
 //on appelle la méthode grâce à $patients qui se trouve dans ma classe et qui me retourne un tableau stocké dans $patientsList
 $usersList = $users->getUsersList();
 
-
-
-
 ?>
 

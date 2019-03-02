@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include '../models/movies.php';
+include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/postsListCtrl.php';
 ?>
@@ -38,7 +38,7 @@ if (isset($resultList)) {
                             <tr>
                                 <td><?= $posts->title ?></td> 
                                 <td><?= $posts->content ?></td>
-                                <td><?= $posts->id_cine_movies ?></td>
+                                <td><?= $posts->id_cine_medias ?></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>

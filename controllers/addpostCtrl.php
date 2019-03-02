@@ -1,8 +1,9 @@
 <?php
 
 $posts = new posts();
-$movies = new movies();
-$moviesList = $movies->getMoviesList();
+$medias = new medias();
+$mediasList = $medias->getmediasList();
+
 
 //déclaration des regex :
 $nameRegex = '/([a-zA-Z\- ])/';
@@ -39,11 +40,11 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    if (isset($_POST['id_cine_movies'])) {
-        if (!empty($_POST['id_cine_movies'])) {
-            $id_cine_movies = htmlspecialchars($_POST['id_cine_movies']);
+    if (isset($_POST['id_cine_medias'])) {
+        if (!empty($_POST['id_cine_medias'])) {
+            $id_cine_medias = htmlspecialchars($_POST['id_cine_medias']);
         } else {
-            $formError['id_cine_movies'] = 'Erreur, veuillez sélectionnez une console.';
+            $formError['id_cine_medias'] = 'Erreur, veuillez sélectionnez une console.';
         }
     }
 
@@ -54,10 +55,10 @@ if (isset($_POST['submit'])) {
         //Instanciation de l'objet patients. 
         //$patients devient une instance de la classe patients.
         //la méthode magique construct est appelée automatiquement grâce au mot clé new.
-        $posts = new posts();
+       $posts = new posts();
         $posts->title = $title;
         $posts->content = $content;
-        $posts->id_cine_movies = $id_cine_movies;
+        $posts->id_cine_medias = $id_cine_medias;
 
 
 

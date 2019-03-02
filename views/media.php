@@ -1,6 +1,7 @@
 <?php
-include '../models/movies.php';
-include '../controllers/movieCtrl.php';
+include '../models/medias.php';
+include '../models/posts.php';
+include '../controllers/mediaCtrl.php';
 include 'header.php';
 ?>
 <?php
@@ -42,13 +43,13 @@ if (isset($resultList)) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($moviesList as $movies) { ?>
+                        <?php foreach ($mediasList as $medias) { ?>
                             <tr>
-                                <td><?= $movies->title ?></td>
-                                <td><?= $movies->director ?></td>
-                                <td><?= $movies->content ?></td>
-                                <td><a class="btn blue-gradient btn-lg btn-block" href="movieUpdate.php?id=<?= $movies->id ?>">Modification</a></td>
-                                <td><a class="btn blue-gradient-rgba btn-lg btn-block" href="movie.php?idDelete=<?= $movies->id ?>">Supprimer cette fiche</a></td>
+                                <td><?= $medias->title ?></td>
+                                <td><?= $medias->director ?></td>
+                                <td><?= $medias->content ?></td>
+                                <td><a class="btn blue-gradient btn-lg btn-block" href="mediaUpdate.php?id=<?= $medias->id ?>">Modification</a></td>
+                                <td><a class="btn blue-gradient-rgba btn-lg btn-block" href="media.php?idDelete=<?= $medias->id ?>">Supprimer cette fiche</a></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>
@@ -58,7 +59,4 @@ if (isset($resultList)) {
         </div>
     </div>
 </div>
-
-
 <?php include 'footer.php'; ?>
-

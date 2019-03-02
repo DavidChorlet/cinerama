@@ -1,7 +1,6 @@
 <?php
 include '../models/comments.php';
-include '../models/pictures.php';
-include '../models/movies.php';
+include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/postUpdateCtrl.php';
 include 'header.php';

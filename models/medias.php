@@ -1,6 +1,6 @@
 <?php
 
-class movies {
+class medias {
 
     public $id = 0;
     public $title = '';
@@ -17,8 +17,8 @@ class movies {
     }
 
     //méthode permettant d'ajouter un film dans la base de données.
-    public function addMovies() {
-        $query = 'INSERT INTO `cine_movies` (`title`,`director`, `content`) '
+    public function addMedias() {
+        $query = 'INSERT INTO `cine_medias` (`title`,`director`, `content`) '
                 . 'VALUES (:title, :director, :content)';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':title', $this->title, PDO::PARAM_STR);
@@ -28,9 +28,9 @@ class movies {
     }
 
     //méthode permettant de récuperer la liste des films.
-    public function getMoviesList() {
+    public function getmediasList() {
         $result = array();
-        $query = 'SELECT * FROM `cine_movies`';
+        $query = 'SELECT * FROM `cine_medias`';
         $queryResult = $this->db->query($query);
         if (is_object($queryResult)) {
             $result = $queryResult->fetchAll(PDO::FETCH_OBJ);
@@ -39,10 +39,10 @@ class movies {
     }
     
     //méthode permettant de récuperer un film d'après son id.
-    public function profileMovie() {
+    public function profileMedia() {
         $return = FALSE;
         $isOk = FALSE;
-        $query = 'SELECT `title`, `director`, `content` FROM `cine_movies` WHERE `id`= :id';
+        $query = 'SELECT `title`, `director`, `content` FROM `cine_medias` WHERE `id`= :id';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         //si la requête est bien executé, on rempli $return (array) avec un objet
@@ -61,8 +61,8 @@ class movies {
     
 
     //méthode permettant de modifier la fiche d'un film.
-    public function movieUpdate() {
-        $query = 'UPDATE `cine_movies` SET `title`= :title, `director`= :director, `content`= :content WHERE `cine_movies`.`id`= :id';
+    public function mediaUpdate() {
+        $query = 'UPDATE `cine_medias` SET `title`= :title, `director`= :director, `content`= :content WHERE `cine_medias`.`id`= :id';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':title', $this->title, PDO::PARAM_STR);
         $queryResult->bindValue(':director', $this->director, PDO::PARAM_STR);
@@ -74,11 +74,11 @@ class movies {
     /**
      * Méthode qui permet à l'utilisateur de supprimer une fiche
      */
-    public function deleteMovie() {
-        $query = 'DELETE FROM `cine_movies` WHERE `cine_movies`.`id` = :id';
-        $deleteMovie = $this->db->prepare($query);
-        $deleteMovie->bindValue(':id', $this->id, PDO::PARAM_INT);
-        return $deleteMovie->execute();
+    public function deleteMedia() {
+        $query = 'DELETE FROM `cine_medias` WHERE `cine_medias`.`id` = :id';
+        $deletemedia = $this->db->prepare($query);
+        $deletemedia->bindValue(':id', $this->id, PDO::PARAM_INT);
+        return $deletemedia->execute();
       }
     
 }

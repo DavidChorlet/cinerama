@@ -3,15 +3,15 @@
 //Instanciation de l'objet users. 
 //$users devient une instance de la classe users.
 //La méthode magique construct est appelée automatiquement grâce au mot clé new.
-$posts = new posts();
+$medias = new medias();
 
 
 $isDelete = FALSE;
 if (!empty($_GET['idDelete'])) {
-    $posts->id = htmlspecialchars($_GET['idDelete']);
-    $isDelete = $posts->deletePost();
+    $medias->id = htmlspecialchars($_GET['idDelete']);
+    $isDelete = $medias->deleteMedia();
     }
 //on appelle la méthode grâce à $patients qui se trouve dans ma classe et qui me retourne un tableau stocké dans $patientsList
-$postsList = $posts->getPostsList();
+$mediasList = $medias->getmediasList();
 
 ?>

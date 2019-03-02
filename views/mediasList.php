@@ -1,7 +1,8 @@
 <?php
 include 'header.php';
-include '../models/movies.php';
-include '../controllers/moviesListCtrl.php';
+include '../models/posts.php';
+include '../models/medias.php';
+include '../controllers/mediasListCtrl.php';
 ?>
 
 <div class="row">
@@ -29,11 +30,11 @@ if (isset($resultList)) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($moviesList as $movies) { ?>
+                        <?php foreach ($mediasList as $medias) { ?>
                             <tr>
-                                <td><?= $movies->title ?></td>
-                                <td><?= $movies->director ?></td>
-                                <td><?= $movies->content ?></td>
+                                <td><?= $medias->title ?></td>
+                                <td><?= $medias->director ?></td>
+                                <td><?= $medias->content ?></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>

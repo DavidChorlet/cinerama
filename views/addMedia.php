@@ -1,51 +1,25 @@
 <?php
 include '../models/comments.php';
-include '../models/pictures.php';
+include '../models/medias.php';
 include '../models/posts.php';
-include '../models/movies.php';
-include '../controllers/movieUpdateCtrl.php';
+include '../controllers/addMediaCtrl.php';
 include 'header.php';
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="text-center col-12">
+        <div class="text-center col-12" >
             <div class="hat">
-                <h1>Fiche du film</h1>
+                <h1>Ajouter un film</h1>
+                <?php if ($isSuccess) { ?>
+                    <p class="text-success">Enregistrement effectué !</p>
+                    <?php
+                }
+                if ($isError) {
+                    ?>
+                    <p class="text-danger">Désolé, le film n'a pas pu être enregistré.</p>
+                <?php } ?>
             </div>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Film</th>
-                            <th scope="col">Réalisateur</th>
-                            <th scope="col">Synopsis</th>
-                        </tr>
-                    </thead>
-                    <?php if ($isMovie) { ?>
-                        <tbody>
-                            <tr>
-                                <td><?= $movies->title ?></td>
-                                <td><?= $movies->director ?></td>
-                                <td><?= $movies->content ?></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            <?php } else { ?>
-                <div>Le patient n'a pas été trouvé !</div>
-            <?php } ?>
-            <div class="hat">
-                <h1>Modifier la fiche de ce film</h1>
-            </div>
-            <?php if ($isSuccess) { ?>
-                <p class="text-success">Modifications enregistrées !</p>
-                <?php
-            }
-            if ($isError) {
-                ?>
-                <p class="text-danger">Désolé, les modifications n'ont pu être enregistrées.</p>
-            <?php } ?>
-            <form method="POST" action="movieUpdate.php?id=<?= $movies->id ?>">
+            <form method="POST" action="addMedia.php">
                 <fieldset class="window">
                     <div class="form-group">
                         <div class="form-row">             
@@ -69,8 +43,14 @@ include 'header.php';
                                 <p class="text-danger"><?= isset($formError['content']) ? $formError['content'] : '' ?></p>
                             </div>
                         </div>
-                        <input class="btn btn-black" type="submit" value="Valider" name='submit'/>
-                    </div>
+                                                <div class="form-row">
+                            <div class="col-sm-12">
+                                <input class="btn btn-black" type="submit" value="Valider" name="submit"/>
+                            </div>
+                        </div>
                 </fieldset>
             </form>
-            <?php include 'footer.php'; ?>
+        </div>
+    </div>
+</div>
+<?php include 'footer.php'; ?>

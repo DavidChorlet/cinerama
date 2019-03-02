@@ -1,6 +1,6 @@
 <?php
 include '../models/posts.php';
-include '../models/movies.php';
+include '../models/medias.php';
 include '../controllers/postCtrl.php';
 include 'header.php';
 ?>
