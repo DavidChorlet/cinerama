@@ -11,7 +11,7 @@ if (isset($_GET['idDelete'])) {
         <p> Suppression réussie! </p><?php
     } else {
         ?>
-        <p class="text-danger">Echec de la suppression !</p>
+        <p class="text-danger">Echec de la suppression...</p>
         <?php
     }
 }
@@ -19,7 +19,7 @@ if (isset($_GET['idDelete'])) {
 <div class="row">
     <div class="text-center col-12">
         <div class="hat">
-            <h1>Liste des films</h1>
+            <h1>Liste des oeuvres</h1>
         </div>
     </div>
 </div>
@@ -35,9 +35,9 @@ if (isset($resultList)) {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Film</th>
-                            <th scope="col">Réalisateur</th>
-                            <th scope="col">Synopsis</th>
+                            <th scope="col">Oeuvre</th>
+                            <th scope="col">Réalisateur/Auteur</th>
+                            <th scope="col">Résumé</th>
                             <th scope="col">Modifier cette fiche</th>
                             <th scope="col">Supprimer cette fiche</th>
                         </tr>

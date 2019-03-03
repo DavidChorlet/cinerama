@@ -27,5 +27,4 @@ include '../controllers/loginCtrl.php';
 </div>
 <?php
 include 'footer.php';
-?>
-        
+?>    

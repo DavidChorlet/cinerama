@@ -53,7 +53,6 @@ if (isset($_POST['submit'])) {
         }
     }
    
-    
     //si mon tableau ne contient aucune erreur
     if (count($formError) == 0) {
         //Instanciation de l'objet medias. 

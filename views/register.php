@@ -38,4 +38,3 @@ include '../controllers/registerCtrl.php';
 </div>
 <script src="assets/js/script.js" type="text/javascript"></script>
 <?php include 'footer.php'; ?>
-

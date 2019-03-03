@@ -5,17 +5,12 @@ include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/postsListCtrl.php';
 ?>
-
 <div class="row">
     <div class="text-center col-12">
         <div class="hat">
             <h1>Liste des articles</h1>
         </div>
     </div>
-
-
-
-
 </div>
 <?php
 if (isset($resultList)) {
@@ -29,9 +24,8 @@ if (isset($resultList)) {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Titre:</th>
-                            <th scope="col">Contenu:</th>
-                            <th scope="col">id film:</th>
+                            <th scope="col">Titre</th>
+                            <th scope="col">Contenu</th>
                             <th scope="col">Image</th>
                         </tr>
                     </thead>
@@ -40,7 +34,6 @@ if (isset($resultList)) {
                             <tr>
                                 <td><?= $posts->title ?></td> 
                                 <td><?= $posts->content ?></td>
-                                <td><?= $posts->id_cine_medias ?></td>
                                 <td><img src="../assets/<?= $posts->picture ?>" alt="<?= $posts->title ?>" /></td>
                             </tr>
                         <?php } ?>                 

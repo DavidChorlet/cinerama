@@ -71,9 +71,6 @@ if (isset($_POST['submit'])) {
         $users->mail = $mail;
         $users->password = $password;
 
-
-
-
         if ($users->profileUpdate()) {
             $_SESSION['nickname'] = $nickname;
             $_SESSION['mail'] = $mail;

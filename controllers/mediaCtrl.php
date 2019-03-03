@@ -5,7 +5,6 @@
 //La méthode magique construct est appelée automatiquement grâce au mot clé new.
 $medias = new medias();
 
-
 $isDelete = FALSE;
 if (!empty($_GET['idDelete'])) {
     $medias->id = htmlspecialchars($_GET['idDelete']);

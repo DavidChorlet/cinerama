@@ -61,4 +61,3 @@ include '../controllers/addcommentCtrl.php';
 <?php
 include 'footer.php';
 ?>
-

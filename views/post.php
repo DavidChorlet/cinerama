@@ -11,7 +11,7 @@ if (isset($_GET['idDelete'])) {
         <p> Suppression réussie! </p><?php
     } else {
         ?>
-        <p class="text-danger">Echec de la suppression !</p>
+        <p class="text-danger">Echec de la suppression...</p>
         <?php
     }
 }
@@ -35,7 +35,7 @@ if (isset($resultList)) {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Titre</th>
+                            <th scope="col">Titre de l'article</th>
                             <th scope="col">Contenu</th>
                             <th scope="col">Modifier cet article</th>
                             <th scope="col">Supprimer cet article</th>
@@ -46,7 +46,6 @@ if (isset($resultList)) {
                             <tr>
                                 <td><?= $posts->title ?></td>
                                 <td><?= $posts->content ?></td>
-                                
                                 <td><a class="btn blue-gradient btn-lg btn-block" href="postUpdate.php?id=<?= $posts->id ?>">Modification</a></td>
                                 <td><a class="btn blue-gradient-rgba btn-lg btn-block" href="post.php?idDelete=<?= $posts->id ?>">Suppression</a></td>
                             </tr>
@@ -58,8 +57,4 @@ if (isset($resultList)) {
         </div>
     </div>
 </div>
-
-
 <?php include 'footer.php'; ?>
-
-

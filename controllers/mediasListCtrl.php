@@ -8,4 +8,3 @@ $medias = new medias();
 $mediasList = $medias->getmediasList();
 
 ?>
-

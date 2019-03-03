@@ -94,9 +94,5 @@ class users extends database{
         $deleteUser->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $deleteUser->execute();
       }
-      
-
-      
-}
-
- 
+          
+} 

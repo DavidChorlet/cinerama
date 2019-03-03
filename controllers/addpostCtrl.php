@@ -4,7 +4,6 @@ $posts = new posts();
 $medias = new medias();
 $mediasList = $medias->getmediasList();
 
-
 //déclaration des regex :
 $nameRegex = '/([a-zA-Z\- ])/';
 
@@ -53,7 +52,6 @@ if (isset($_POST['submit'])) {
         $picture = $medias->picture;
     }
 
-
     if (isset($_POST['title'])) {
         if (!empty($_POST['title'])) {
             if (preg_match($nameRegex, $_POST['title'])) {
@@ -87,7 +85,6 @@ if (isset($_POST['submit'])) {
     }
 
 
-
     //si mon tableau ne contient aucune erreur
     if (count($formError) == 0) {
         //Instanciation de l'objet patients. 
@@ -100,8 +97,6 @@ if (isset($_POST['submit'])) {
         $posts->id_cine_medias = $id_cine_medias;
 
 
-
-
         if ($posts->addPosts()) {
             $isSuccess = TRUE;
         } else {
@@ -109,6 +104,3 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-    
-
-

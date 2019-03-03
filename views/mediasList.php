@@ -4,11 +4,10 @@ include '../models/posts.php';
 include '../models/medias.php';
 include '../controllers/mediasListCtrl.php';
 ?>
-
 <div class="row">
     <div class="text-center col-12">
         <div class="hat">
-            <h1>Liste des films</h1>
+            <h1>Liste des oeuvres</h1>
         </div>
     </div>
 </div>
@@ -24,9 +23,9 @@ if (isset($resultList)) {
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Film</th>
-                            <th scope="col">Réalisateur</th>
-                            <th scope="col">Synopsis</th>
+                            <th scope="col">Oeuvre</th>
+                            <th scope="col">Réalisateur/Auteur</th>
+                            <th scope="col">Résumé</th>
                             <th scope="col">Image</th>
                         </tr>
                     </thead>
@@ -48,27 +47,3 @@ if (isset($resultList)) {
 </div>
 <?php include 'footer.php';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

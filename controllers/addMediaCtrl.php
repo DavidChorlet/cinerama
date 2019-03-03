@@ -6,7 +6,7 @@ $nameRegex = "/([a-zA-Z\- ])/";
 $formError = array();
 $isSuccess = FALSE;
 $isError = FALSE;
-var_dump($_POST, $_FILES);
+
 //si le submit existe
 if (isset($_POST['submit'])) {
 
@@ -47,9 +47,6 @@ if (isset($_POST['submit'])) {
         $picture = $medias->picture;
     }
 
-
-
-
     //si $_POST['lastname'] existe
     if (isset($_POST['title'])) {
         //si $_POST['lastname'] n'est pas vide
@@ -88,8 +85,6 @@ if (isset($_POST['submit'])) {
         }
     }
     
-   
-    
     //si mon tableau ne contient aucune erreur
     if (count($formError) == 0) {
         //Instanciation de l'objet patients. 
@@ -102,7 +97,6 @@ if (isset($_POST['submit'])) {
         $medias->picture = $picture;
 
 
-
         if ($medias->addMedias()) {
             $isSuccess = TRUE;
         } else {
@@ -110,4 +104,3 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-

@@ -16,19 +16,19 @@ include '../controllers/addpostCtrl.php';
                 }
                 if ($isError) {
                     ?>
-                    <p class="text-danger">Désolé, le film n'a pas pu être enregistré.</p>
+                    <p class="text-danger">Désolé, mais votre article n'a pas pu être enregistré...</p>
                 <?php } ?>
             </div>
             <form method="POST" action="addpost.php" enctype="multipart/form-data">
                 <fieldset class="window">
                     <div class="input-group mb-3">
-                        <label for="title" class="col-sm-2 col-form-label">Affiche</label>
+                        <label for="title" class="col-sm-2 col-form-label">Affiche/Couverture</label>
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Affiche du film</span>
+                            <span class="input-group-text" id="inputGroupFileAddon01">Image illustrative</span>
                         </div>
                         <div class="custom-file">
                             <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choisir un fichier</label>
+                            <label class="custom-file-label" for="inputGroupFile01">Choisir un fichier d'illustration</label>
                         </div>
                     </div>
                     <div class="form-group">
@@ -40,14 +40,14 @@ include '../controllers/addpostCtrl.php';
                             </div>
                         </div>
                         <div class="form-row">             
-                            <label for="content" class="col-sm-2 col-form-label">Synopsis</label>
+                            <label for="content" class="col-sm-2 col-form-label">Votre texte</label>
                             <div class="col-sm-10">
                                 <textarea name="content" type="text" class="form-control" id="content" value="<?= isset($content) ? $content : '' ?>"></textarea>
                                 <p class="text-danger"><?= isset($formError['content']) ? $formError['content'] : '' ?></p>
                             </div>
                         </div>
                         <div class="form-row">
-                            <label for="id_cine_medias" class="col-sm-offset-2 col-sm-4 col-form-label">Choisir un film : </label>
+                            <label for="id_cine_medias" class="col-sm-offset-2 col-sm-4 col-form-label">Choisir une oeuvre à analyser: </label>
                             <div class="col-sm-offset-2 col-sm-4">
                                 <select name="id_cine_medias">
                                     <?php foreach ($mediasList as $medias) { ?>
@@ -57,7 +57,7 @@ include '../controllers/addpostCtrl.php';
                                 <p class="text-danger"><?= isset($formError['id_cine_medias']) ? $formError['id_cine_medias'] : '' ?></p>
                             </div>
                         </div>
-                        <input class="btn btn-black" type="submit" value="Valider" name='submit'/>
+                        <input class="btn btn-black" type="submit" value="Valider votre contribution" name='submit'/>
                     </div>
                 </fieldset>
             </form>

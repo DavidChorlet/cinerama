@@ -82,12 +82,3 @@ class comments extends database{
       }
     
 }
-
-    
-    
-
-
-
-
-
-
