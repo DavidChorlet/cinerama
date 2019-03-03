@@ -8,6 +8,7 @@ header,.hat{
 h1{
     text-align: center;
 }
+
 footer{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -36,6 +37,7 @@ footer{
     background-color: #fffff;
     text-align: justify;
 }
+
 .hat{
     padding: 20px;
     margin: 16px;
@@ -78,6 +80,7 @@ th{
     border-collapse: collapse;
     background-color: #80cbc4;
     color: black;
+    width: 150;
 }
 td{
     border: 2px solid #3041A1;
@@ -95,4 +98,5 @@ tbody{
 }
 table{
     font-family: Raleway,sans serif;
+    image-resolution: 150;
 }
