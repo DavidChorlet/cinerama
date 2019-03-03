@@ -40,7 +40,7 @@ class medias extends database{
     public function profileMedia() {
         $return = FALSE;
         $isOk = FALSE;
-        $query = 'SELECT `title`, `director`, `content` FROM `cine_medias` WHERE `id`= :id';
+        $query = 'SELECT `title`, `director`, `content`, `picture` FROM `cine_medias` WHERE `id`= :id';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         //si la requête est bien executé, on rempli $return (array) avec un objet
@@ -52,6 +52,7 @@ class medias extends database{
             $this->title = $return->title;
             $this->director = $return->director;
             $this->content = $return->content;
+            $this->picture = $return->picture;
             $isOk = TRUE;
         }
         return $isOk;
@@ -60,11 +61,12 @@ class medias extends database{
 
     //méthode permettant de modifier la fiche d'un film.
     public function mediaUpdate() {
-        $query = 'UPDATE `cine_medias` SET `title`= :title, `director`= :director, `content`= :content WHERE `cine_medias`.`id`= :id';
+        $query = 'UPDATE `cine_medias` SET `title`= :title, `director`= :director, `content`= :content, `picture`= :picture WHERE `cine_medias`.`id`= :id';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':title', $this->title, PDO::PARAM_STR);
         $queryResult->bindValue(':director', $this->director, PDO::PARAM_STR);
         $queryResult->bindValue(':content', $this->content, PDO::PARAM_STR);
+        $queryResult->bindValue(':picture', $this->picture, PDO::PARAM_STR);
         $queryResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $queryResult->execute();
     }
