@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include '../models/comments.php';
 include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/postsListCtrl.php';
@@ -31,6 +32,7 @@ if (isset($resultList)) {
                             <th scope="col">Titre:</th>
                             <th scope="col">Contenu:</th>
                             <th scope="col">id film:</th>
+                            <th scope="col">Image</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +41,7 @@ if (isset($resultList)) {
                                 <td><?= $posts->title ?></td> 
                                 <td><?= $posts->content ?></td>
                                 <td><?= $posts->id_cine_medias ?></td>
+                                <td><img src="../assets/<?= $posts->picture ?>" alt="<?= $posts->title ?>" /></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>

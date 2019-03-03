@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include '../models/comments.php';
 include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/addpostCtrl.php';
@@ -18,8 +19,18 @@ include '../controllers/addpostCtrl.php';
                     <p class="text-danger">Désolé, le film n'a pas pu être enregistré.</p>
                 <?php } ?>
             </div>
-            <form method="POST" action="addpost.php">
+            <form method="POST" action="addpost.php" enctype="multipart/form-data">
                 <fieldset class="window">
+                    <div class="input-group mb-3">
+                        <label for="title" class="col-sm-2 col-form-label">Affiche</label>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Affiche du film</span>
+                        </div>
+                        <div class="custom-file">
+                            <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choisir un fichier</label>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="form-row">             
                             <label for="title" class="col-sm-2 col-form-label">Titre de votre article</label>

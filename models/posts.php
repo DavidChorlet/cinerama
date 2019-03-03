@@ -4,6 +4,7 @@ class posts extends database{
 
     public $id = 0;
     public $title = '';
+    public $picture = '';
     public $content = '';
     public $id_cine_medias = 0;
     protected $db;
@@ -14,10 +15,11 @@ class posts extends database{
     
     //méthode permettant d'ajouter un article dans la base de données.
     public function addPosts() {
-        $query = 'INSERT INTO `cine_posts` (`title`,`content`,`id_cine_medias`) '
-                . 'VALUES (:title, :content, :id_cine_medias)';
+        $query = 'INSERT INTO `cine_posts` (`title`,`picture`,`content`,`id_cine_medias`) '
+                . 'VALUES (:title, :picture, :content, :id_cine_medias)';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':title', $this->title, PDO::PARAM_STR);
+        $queryResult->bindValue(':picture', $this->picture, PDO::PARAM_STR);
         $queryResult->bindValue(':content', $this->content, PDO::PARAM_STR);
         $queryResult->bindValue(':id_cine_medias', $this->id_cine_medias, PDO::PARAM_INT);
         return $queryResult->execute();
