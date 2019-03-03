@@ -40,7 +40,7 @@ class posts extends database{
     public function profilePost() {
         $return = FALSE;
         $isOk = FALSE;
-        $query = 'SELECT `title`, `content` FROM `cine_posts` WHERE `id`= :id';
+        $query = 'SELECT `title`, `content`, `picture` FROM `cine_posts` WHERE `id`= :id';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         //si la requête est bien executé, on rempli $return (array) avec un objet
@@ -51,6 +51,7 @@ class posts extends database{
         if (is_object($return)) {
             $this->title = $return->title;
             $this->content = $return->content;
+            $this->picture = $return->picture;
             $isOk = TRUE;
         }
         return $isOk;
@@ -58,9 +59,10 @@ class posts extends database{
     
     //méthode permettant de modifier un article.
     public function postUpdate() {
-        $query = 'UPDATE `cine_posts` SET `title`= :title, `content`= :content WHERE `cine_posts`.`id`= :id';
+        $query = 'UPDATE `cine_posts` SET `title`= :title, `picture` = :picture, `content`= :content WHERE `cine_posts`.`id`= :id';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':title', $this->title, PDO::PARAM_STR);
+        $queryResult->bindValue(':picture', $this->picture, PDO::PARAM_STR);
         $queryResult->bindValue(':content', $this->content, PDO::PARAM_STR);
         $queryResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $queryResult->execute();

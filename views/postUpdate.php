@@ -17,6 +17,7 @@ include '../controllers/postUpdateCtrl.php';
                         <tr>
                             <th scope="col">Titre de l'article</th>
                             <th scope="col">Contenu</th>
+                            <th scope="col">Image</th>
                             </tr>
                     </thead>
                     <?php if ($isPost) { ?>
@@ -24,6 +25,7 @@ include '../controllers/postUpdateCtrl.php';
                             <tr>
                                 <td><?= $posts->title ?></td>
                                 <td><?= $posts->content ?></td>
+                                <td><img src="../assets/<?= $posts->picture ?>" alt="<?= $posts->title ?>" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -42,9 +44,19 @@ include '../controllers/postUpdateCtrl.php';
                 ?>
                 <p class="text-danger">Désolé, mais vos modifications n'ont pu être enregistrées.</p>
             <?php } ?>
-                <form method="POST" action="postUpdate.php?id=<?= $posts->id ?>">
+                <form method="POST" action="postUpdate.php?id=<?= $posts->id ?>" enctype="multipart/form-data" >
                 <fieldset class="window">
                     <div class="form-group">
+                        <div class="input-group mb-3">
+                        <label for="title" class="col-sm-2 col-form-label">Affiche/Couverture</label>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Image illustrative</span>
+                        </div>
+                        <div class="custom-file">
+                            <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Choisir un fichier d'illustration</label>
+                        </div>
+                    </div>
                         <div class="form-row">             
                             <label for="title" class="col-sm-2 col-form-label">Titre</label>
                             <div class="col-sm-10">
