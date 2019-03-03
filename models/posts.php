@@ -1,19 +1,15 @@
 <?php
 
-class posts {
+class posts extends database{
 
     public $id = 0;
     public $title = '';
     public $content = '';
     public $id_cine_medias = 0;
-    private $db;
+    protected $db;
 
-    public function __construct() {
-        try {
-            $this->db = new PDO('mysql:host=cinerama;dbname=cinedavid;charset=utf8', 'chorlet', 'dddd');
-        } catch (Exception $ex) {
-            $ex->getMessage();
-        }
+    function __construct() {
+        parent::__construct();
     }
     
     //méthode permettant d'ajouter un article dans la base de données.

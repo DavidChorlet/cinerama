@@ -1,20 +1,16 @@
 <?php
 
-class users {
+class users extends database{
 
     public $id = 0;
     public $nickname = '';
     public $mail = '';
     public $password = '';
     public $idGroup = 2; //2 est le membre
-    private $db;
+    protected $db;
 
-    public function __construct() {
-        try {
-            $this->db = new PDO('mysql:host=cinerama;dbname=cinedavid;charset=utf8', 'chorlet', 'dddd');
-        } catch (Exception $ex) {
-            $ex->getMessage();
-        }
+    function __construct() {
+        parent::__construct();
     }
 
     //méthode permettant d'ajouter un utilisateur dans la base de données.

@@ -1,10 +1,10 @@
 <?php
+include 'header.php';
 include '../models/comments.php';
 include '../models/movies.php';
 include '../models/pictures.php';
 include '../models/posts.php';
 include '../controllers/addcommentCtrl.php';
-include 'header.php';
 ?>
 <div class="container-fluid">
     <div class="row">

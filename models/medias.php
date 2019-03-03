@@ -1,29 +1,27 @@
 <?php
 
-class medias {
+class medias extends database{
 
     public $id = 0;
     public $title = '';
     public $director = '';
     public $content = '';
-    private $db;
+    public $picture = '';
+    protected $db;
 
-    public function __construct() {
-        try {
-            $this->db = new PDO('mysql:host=cinerama;dbname=cinedavid;charset=utf8', 'chorlet', 'dddd');
-        } catch (Exception $ex) {
-            $ex->getMessage();
-        }
+    function __construct() {
+        parent::__construct();
     }
 
     //méthode permettant d'ajouter un film dans la base de données.
     public function addMedias() {
-        $query = 'INSERT INTO `cine_medias` (`title`,`director`, `content`) '
-                . 'VALUES (:title, :director, :content)';
+        $query = 'INSERT INTO `cine_medias` (`title`,`director`, `content`,`picture`) '
+                . 'VALUES (:title, :director, :content, :picture)';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':title', $this->title, PDO::PARAM_STR);
         $queryResult->bindValue(':director', $this->director, PDO::PARAM_STR);
         $queryResult->bindValue(':content', $this->content, PDO::PARAM_STR);
+        $queryResult->bindValue(':picture', $this->picture, PDO::PARAM_STR);
         return $queryResult->execute();
     }
 

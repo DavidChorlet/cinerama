@@ -1,5 +1,7 @@
 <?php
 session_start();
+include '../models/config.php';
+include '../models/database.php';
 include '../models/users.php';
 include '../controllers/headerCtrl.php';
 ?>

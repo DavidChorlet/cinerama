@@ -1,9 +1,9 @@
 <?php
+include 'header.php';
 include '../models/comments.php';
 include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/postUpdateCtrl.php';
-include 'header.php';
 ?>
 <div class="container-fluid">
     <div class="row">

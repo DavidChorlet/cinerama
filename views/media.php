@@ -1,8 +1,8 @@
 <?php
+include 'header.php';
 include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/mediaCtrl.php';
-include 'header.php';
 ?>
 <?php
 if (isset($_GET['idDelete'])) {

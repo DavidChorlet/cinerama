@@ -27,6 +27,7 @@ if (isset($resultList)) {
                             <th scope="col">Film</th>
                             <th scope="col">Réalisateur</th>
                             <th scope="col">Synopsis</th>
+                            <th scope="col">Image</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -35,6 +36,7 @@ if (isset($resultList)) {
                                 <td><?= $medias->title ?></td>
                                 <td><?= $medias->director ?></td>
                                 <td><?= $medias->content ?></td>
+                                <td><img src="../assets/<?= $medias->picture ?>" alt="<?= $medias->title ?>" /></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>
