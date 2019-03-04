@@ -31,12 +31,13 @@ if (isset($resultList)) {
     ?>
     <div class="container">
         <div class="row">
-            <div class="table-responsive">
-                <table class="table">
+            <div class="col-md-12">
+            <table class="table-responsive">
+                
                     <thead>
                         <tr>
                             <th scope="col">Oeuvre</th>
-                            <th scope="col">Réalisateur/Auteur</th>
+                            <th scope="col">Real/Auteur</th>
                             <th scope="col">Résumé</th>
                             <th scope="col">Modifier cette fiche</th>
                             <th scope="col">Supprimer cette fiche</th>

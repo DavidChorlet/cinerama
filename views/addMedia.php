@@ -6,7 +6,7 @@ include '../models/posts.php';
 include '../controllers/addMediaCtrl.php';
 ?>
 <div class="container-fluid">
-    <div class="row">
+    <div class="form-row">
         <div class="text-center col-12" >
             <div class="hat">
                 <h1>Ajouter une oeuvre</h1>
@@ -25,11 +25,11 @@ include '../controllers/addMediaCtrl.php';
                     <div class="input-group mb-3">
                         <label for="title" class="col-sm-2 col-form-label">Affiche/Couverture</label>
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Image illustrative</span>
+                            <span class="input-group-text" id="inputGroupFileAddon01">Image</span>
                         </div>
                         <div class="custom-file">
                             <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choisir un fichier d'illustration</label>
+                            <label class="custom-file-label" for="inputGroupFile01">Fichier</label>
                         </div>
                     </div>
                     <div class="form-group">

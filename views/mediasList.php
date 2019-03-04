@@ -4,6 +4,7 @@ include '../models/posts.php';
 include '../models/medias.php';
 include '../controllers/mediasListCtrl.php';
 ?>
+
 <div class="row">
     <div class="text-center col-12">
         <div class="hat">
@@ -19,12 +20,12 @@ if (isset($resultList)) {
     ?>
     <div class="container">
         <div class="row">
-            <div class="table-responsive">
-                <table class="table">
+            <div class="col-md-12">
+                <table class="table-responsive">
                     <thead>
                         <tr>
                             <th scope="col">Oeuvre</th>
-                            <th scope="col">Réalisateur/Auteur</th>
+                            <th scope="col">Réal/Auteur</th>
                             <th scope="col">Résumé</th>
                             <th scope="col">Image</th>
                         </tr>
@@ -35,7 +36,7 @@ if (isset($resultList)) {
                                 <td><?= $medias->title ?></td>
                                 <td><?= $medias->director ?></td>
                                 <td><?= $medias->content ?></td>
-                                <td><img src="../assets/<?= $medias->picture ?>" alt="<?= $medias->title ?>" /></td>
+                                <td><img src="../assets/<?= $medias->picture ?>" alt="<?= $medias->title ?>" class="img-fluid" /></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>

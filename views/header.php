@@ -18,10 +18,14 @@ include '../controllers/headerCtrl.php';
     <header>
         <nav class="navbar navbar-expand-lg navbar-white bg-dark">
             <a class="navbar-brand" href="index.php">[ Cinerama ]</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+                    aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="animated-icon1"><span></span><span></span><span></span></div>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent20">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>

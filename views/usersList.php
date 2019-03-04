@@ -17,7 +17,7 @@ if (isset($resultList)) {
     ?>
     <div class="container">
          <div class="row">
-            <div class="table-responsive">
+            <div class="col">
                 <table class="table">
                     <thead>
                         <tr>

@@ -20,8 +20,8 @@ if (isset($resultList)) {
     ?>
     <div class="container">
         <div class="row">
-            <div class="table-responsive">
-                <table class="table">
+            <div class="col-md-12">
+                <table class="table-responsive">
                     <thead>
                         <tr>
                             <th scope="col">Titre</th>
@@ -34,7 +34,7 @@ if (isset($resultList)) {
                             <tr>
                                 <td><?= $posts->title ?></td> 
                                 <td><?= $posts->content ?></td>
-                                <td><img src="../assets/<?= $posts->picture ?>" alt="<?= $posts->title ?>" /></td>
+                                <td><img src="../assets/<?= $posts->picture ?>" alt="<?= $posts->title ?>" class="img-fluid" /></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>

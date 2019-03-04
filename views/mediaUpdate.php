@@ -31,7 +31,6 @@ include '../controllers/mediaUpdateCtrl.php';
                             </tr>
                         </tbody>
                     </table>
-                </div>
             <?php } else { ?>
                 <div>La fiche n'a pas été trouvée...</div>
             <?php } ?>
@@ -46,7 +45,9 @@ include '../controllers/mediaUpdateCtrl.php';
                 ?>
                 <p class="text-danger">Désolé, mais vos modifications n'ont pu être enregistrées...</p>
             <?php } ?>
+
             <!--                Formulaire de mise à jour d'une oeuvre-->
+            <div class="form-row>"
             <form method="POST" action="mediaUpdate.php?id=<?= $medias->id ?>" enctype="multipart/form-data">
                 <fieldset class="window">
                     <div class="form-group">
@@ -85,4 +86,9 @@ include '../controllers/mediaUpdateCtrl.php';
                     </div>
                 </fieldset>
             </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
 <?php include 'footer.php'; ?>

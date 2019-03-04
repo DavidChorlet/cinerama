@@ -31,11 +31,11 @@ if (isset($resultList)) {
     ?>
     <div class="container">
         <div class="row">
-            <div class="table-responsive">
-                <table class="table">
+            <div class="col-md-12">
+                <table class="table-responsive">
                     <thead>
                         <tr>
-                            <th scope="col">Titre de l'article</th>
+                            <th scope="col">Titre</th>
                             <th scope="col">Contenu</th>
                             <th scope="col">Modifier cet article</th>
                             <th scope="col">Supprimer cet article</th>
