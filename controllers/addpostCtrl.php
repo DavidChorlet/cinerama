@@ -14,8 +14,8 @@ $isError = FALSE;
 
 //si le submit existe
 if (isset($_POST['submit'])) {
-    
-     // Contôle de l'image
+
+    // Contôle de l'image
     if (isset($_FILES['affiche']) && !empty($_FILES['affiche']['name'])) {
         // On gère ici la taille en Octets le poids de notre image
         // ici donc environ 5Mo.
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
                 // on déclare le chemin de notre dossier qui va recevoir nos images
                 $path = 'uploadAffiche/' . str_replace(' ', '-', $_FILES['affiche']['name']);
                 // Comme c'est OK on envoie notre image dans notre dossier upload.
-                $resultat = move_uploaded_file($_FILES['affiche']['tmp_name'], '../assets/'.$path);
+                $resultat = move_uploaded_file($_FILES['affiche']['tmp_name'], '../assets/' . $path);
                 if ($resultat) {
                     $picture = $path;
                 } else {
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
             $formError['affiche'] = '- Votre photo ne doit pas dépasser 5Mo.';
         }
     } else {
-        // si le champ est vide nous  renvoyons l'information en BDD
+        // si le champ est vide nous renvoyons l'information en BDD
         $picture = $medias->picture;
     }
 
@@ -87,10 +87,10 @@ if (isset($_POST['submit'])) {
 
     //si mon tableau ne contient aucune erreur
     if (count($formError) == 0) {
-        //Instanciation de l'objet patients. 
-        //$patients devient une instance de la classe patients.
-        //la méthode magique construct est appelée automatiquement grâce au mot clé new.
-       $posts = new posts();
+        //Instanciation de l'objet posts. 
+        //$posts devient une instance de la classe posts.
+        //La méthode magique construct est appelée automatiquement grâce au mot clé new.
+        $posts = new posts();
         $posts->title = $title;
         $posts->picture = $picture;
         $posts->content = $content;

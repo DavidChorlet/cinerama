@@ -7,6 +7,7 @@ include '../controllers/registerCtrl.php';
         <div class="text-center col-12" >
             <div class="hat">
                 <h1>Inscription</h1></div>
+<!--            Formulaire d'inscription-->
             <form method="POST" action="#">
                 <fieldset class="window">
                     <div class="form-group">

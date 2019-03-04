@@ -1,6 +1,6 @@
 <?php
 
-class users extends database{
+class users extends database {
 
     public $id = 0;
     public $nickname = '';
@@ -13,7 +13,7 @@ class users extends database{
         parent::__construct();
     }
 
-    //méthode permettant d'ajouter un utilisateur dans la base de données.
+    //Méthode permettant d'ajouter un utilisateur dans la base de données.
     public function addUsers() {
         $query = 'INSERT INTO `cine_users` (`nickname`,`mail`, `password`) '
                 . 'VALUES (:nickname, :mail, :password)';
@@ -93,6 +93,5 @@ class users extends database{
         $deleteUser = $this->db->prepare($query);
         $deleteUser->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $deleteUser->execute();
-      }
-          
-} 
+    }
+}

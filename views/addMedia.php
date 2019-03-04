@@ -19,6 +19,7 @@ include '../controllers/addMediaCtrl.php';
                     <p class="text-danger">Désolé, mais l'oeuvre n'a pas pu être enregistrée...</p>
                 <?php } ?>
             </div>
+<!--            Formulaire d'ajout d'oeuvre multipart pour autoriser l'upload d'images-->
             <form method="POST" action="addMedia.php" enctype="multipart/form-data">
                 <fieldset class="window">
                     <div class="input-group mb-3">

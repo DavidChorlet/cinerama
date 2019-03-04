@@ -59,12 +59,20 @@ if (isset($_POST['submit'])) {
             $formError['hour'] = 'Erreur, veuillez sélectionnez une heure.';
         }
     }
+     if (isset($_POST['id_cine_users'])) {
+        if (!empty($_POST['id_cine_users'])) {
+            $id_cine_users = htmlspecialchars($_SESSION['id_cine_users']);
+        } else {
+            $formError['id_cine_users'] = 'Erreur, veuillez sélectionnez une console.';
+        }
+    }
      
     if (count($formError) == 0) {
         $comments = new comments();
         $comments->text = $text;
-        $comments->dateHour = $date . ' ' . $hour;
+        $comments->addDate = $date . ' ' . $hour;
         $comments->id_cine_posts = $id_cine_posts;
+        $comments->id_cine_users= $id_cine_users;
 
         if ($comments->addComments()) {
             $isSuccess = TRUE;

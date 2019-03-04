@@ -6,7 +6,7 @@ $isDelete = FALSE;
 if (!empty($_GET['idDelete'])) {
     $users->id = htmlspecialchars($_GET['idDelete']);
     $isDelete = $users->deleteUser();
-    }
+}
 
 $isUser = FALSE;
 if (!empty($_GET['id'])) {
@@ -17,12 +17,12 @@ if (!empty($_GET['id'])) {
 //Déclaration des regex :
 $nameRegex = "/([a-zA-Z\- ])/";
 
-//création d'un tableau où l'on vient stocker les erreurs :
+//Création d'un tableau où l'on vient stocker les erreurs :
 $formError = array();
 $isSuccess = FALSE;
 $isError = FALSE;
 
-//si le submit existe
+//Si le submit existe
 if (isset($_POST['submit'])) {
     //si $_POST['nickname'] existe
     if (isset($_POST['nickname'])) {
@@ -80,5 +80,4 @@ if (isset($_POST['submit'])) {
             $isError = TRUE;
         }
     }
-   
 }

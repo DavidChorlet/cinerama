@@ -24,6 +24,7 @@ if (isset($resultList)) {
                             <th scope="col">Pseudo:</th>
                         </tr>
                     </thead>
+<!--                    Boucle foreach pour parcourir la liste des utilisateurs-->
                     <tbody>
                         <?php foreach ($usersList as $users) { ?>
                             <tr>

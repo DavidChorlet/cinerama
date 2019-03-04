@@ -1,8 +1,7 @@
 <?php
 include 'header.php';
 include '../models/comments.php';
-include '../models/movies.php';
-include '../models/pictures.php';
+include '../models/medias.php';
 include '../models/posts.php';
 include '../controllers/addcommentCtrl.php';
 ?>
@@ -12,6 +11,7 @@ include '../controllers/addcommentCtrl.php';
             <div class="hat">
                 <h1>Ajouter un commentaire</h1>
             </div>
+<!--            Formulaire d'ajout de commentaires-->
             <form method="POST" action="addcomment.php">
                 <fieldset class="window">
                     <div class="form-group">
@@ -45,6 +45,18 @@ include '../controllers/addcommentCtrl.php';
                             <div class="col-sm-6">
                                 <input name="hour" type="time" class="form-control" id="hour" placeholder="Heure" min="00:00" max="23:59" value="<?= isset($hour) ? $hour : '' ?>"/>
                                 <p class="text-danger"><?= isset($formError['hour']) ? $formError['hour'] : '' ?></p>
+                            </div>
+                        </div>
+<!--                        Select pour récupérer l'Id de l'utilisateur-->
+                        <div class="form-row">
+                            <label for="id_cine_users" class="col-sm-offset-2 col-sm-4 col-form-label">Choisir un article : </label>
+                            <div class="col-sm-offset-2 col-sm-4">
+                                <select name="id_cine_users">
+                                    <?php foreach ($usersList as $users) { ?>
+                                        <option value="<?= $users->id ?>"><?= $users->nickname . ' ' . $users->mail ?></option>
+                                    <?php } ?>
+                                </select>
+                                <p class="text-danger"><?= isset($formError['$users']) ? $formError['$users'] : '' ?></p>
                             </div>
                         </div>
                         <div class="form-row">

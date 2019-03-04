@@ -1,6 +1,6 @@
 <?php
 
-class medias extends database{
+class medias extends database {
 
     public $id = 0;
     public $title = '';
@@ -13,7 +13,7 @@ class medias extends database{
         parent::__construct();
     }
 
-    //méthode permettant d'ajouter un film dans la base de données.
+    //Méthode permettant d'ajouter une oeuvre dans la base de données.
     public function addMedias() {
         $query = 'INSERT INTO `cine_medias` (`title`,`director`, `content`,`picture`) '
                 . 'VALUES (:title, :director, :content, :picture)';
@@ -25,7 +25,7 @@ class medias extends database{
         return $queryResult->execute();
     }
 
-    //méthode permettant de récuperer la liste des films.
+    //méthode permettant de récuperer la liste des oeuvres.
     public function getmediasList() {
         $result = array();
         $query = 'SELECT * FROM `cine_medias`';
@@ -35,8 +35,8 @@ class medias extends database{
         }
         return $result;
     }
-    
-    //méthode permettant de récuperer un film d'après son id.
+
+    //méthode permettant de récuperer une oeuvre d'après son id.
     public function profileMedia() {
         $return = FALSE;
         $isOk = FALSE;
@@ -57,9 +57,8 @@ class medias extends database{
         }
         return $isOk;
     }
-    
 
-    //méthode permettant de modifier la fiche d'un film.
+    //méthode permettant de modifier la fiche d'une oeuvre.
     public function mediaUpdate() {
         $query = 'UPDATE `cine_medias` SET `title`= :title, `director`= :director, `content`= :content, `picture`= :picture WHERE `cine_medias`.`id`= :id';
         $queryResult = $this->db->prepare($query);
@@ -70,15 +69,14 @@ class medias extends database{
         $queryResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $queryResult->execute();
     }
-    
+
     /**
-     * Méthode qui permet à l'utilisateur de supprimer une fiche
+     * Méthode qui permet à l'utilisateur de supprimer la fiche d'une oeuvre.
      */
     public function deleteMedia() {
         $query = 'DELETE FROM `cine_medias` WHERE `cine_medias`.`id` = :id';
         $deletemedia = $this->db->prepare($query);
         $deletemedia->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $deletemedia->execute();
-      }
-    
+    }
 }

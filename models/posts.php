@@ -1,6 +1,6 @@
 <?php
 
-class posts extends database{
+class posts extends database {
 
     public $id = 0;
     public $title = '';
@@ -12,8 +12,8 @@ class posts extends database{
     function __construct() {
         parent::__construct();
     }
-    
-    //méthode permettant d'ajouter un article dans la base de données.
+
+    //Méthode permettant d'ajouter un article dans la base de données.
     public function addPosts() {
         $query = 'INSERT INTO `cine_posts` (`title`,`picture`,`content`,`id_cine_medias`) '
                 . 'VALUES (:title, :picture, :content, :id_cine_medias)';
@@ -24,8 +24,8 @@ class posts extends database{
         $queryResult->bindValue(':id_cine_medias', $this->id_cine_medias, PDO::PARAM_INT);
         return $queryResult->execute();
     }
-    
-    //méthode permettant de récuperer la liste des articles.
+
+    //Méthode permettant de récuperer la liste des articles.
     public function getPostsList() {
         $result = array();
         $query = 'SELECT * FROM `cine_posts`';
@@ -35,8 +35,8 @@ class posts extends database{
         }
         return $result;
     }
-    
-    //méthode permettant de récuperer un article d'après son id.
+
+    //Méthode permettant de récuperer un article d'après son id.
     public function profilePost() {
         $return = FALSE;
         $isOk = FALSE;
@@ -56,8 +56,8 @@ class posts extends database{
         }
         return $isOk;
     }
-    
-    //méthode permettant de modifier un article.
+
+    //Méthode permettant de modifier un article.
     public function postUpdate() {
         $query = 'UPDATE `cine_posts` SET `title`= :title, `picture` = :picture, `content`= :content WHERE `cine_posts`.`id`= :id';
         $queryResult = $this->db->prepare($query);
@@ -67,8 +67,8 @@ class posts extends database{
         $queryResult->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $queryResult->execute();
     }
-    
-     /**
+
+    /**
      * Méthode qui permet à l'utilisateur de supprimer son article.
      */
     public function deletePost() {
@@ -76,6 +76,5 @@ class posts extends database{
         $deletePost = $this->db->prepare($query);
         $deletePost->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $deletePost->execute();
-      }
-                          
+    }
 }

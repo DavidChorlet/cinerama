@@ -46,19 +46,20 @@ include '../controllers/mediaUpdateCtrl.php';
                 ?>
                 <p class="text-danger">Désolé, mais vos modifications n'ont pu être enregistrées...</p>
             <?php } ?>
-                <form method="POST" action="mediaUpdate.php?id=<?= $medias->id ?>" enctype="multipart/form-data">
+            <!--                Formulaire de mise à jour d'une oeuvre-->
+            <form method="POST" action="mediaUpdate.php?id=<?= $medias->id ?>" enctype="multipart/form-data">
                 <fieldset class="window">
                     <div class="form-group">
                         <div class="input-group mb-3">
-                        <label for="title" class="col-sm-2 col-form-label">Affiche/Couverture</label>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Image illustrative</span>
+                            <label for="title" class="col-sm-2 col-form-label">Affiche/Couverture</label>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Image illustrative</span>
+                            </div>
+                            <div class="custom-file">
+                                <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choisir un fichier d'illustration</label>
+                            </div>
                         </div>
-                        <div class="custom-file">
-                            <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choisir un fichier d'illustration</label>
-                        </div>
-                    </div>
                         <div class="form-row">             
                             <label for="title" class="col-sm-2 col-form-label">Titre de l'oeuvre</label>
                             <div class="col-sm-10">
@@ -84,4 +85,4 @@ include '../controllers/mediaUpdateCtrl.php';
                     </div>
                 </fieldset>
             </form>
-            <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>

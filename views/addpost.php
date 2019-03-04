@@ -19,6 +19,7 @@ include '../controllers/addpostCtrl.php';
                     <p class="text-danger">Désolé, mais votre article n'a pas pu être enregistré...</p>
                 <?php } ?>
             </div>
+            <!--            Formulaire d'ajout d'articles multipart pour autoriser l'upload d'images-->
             <form method="POST" action="addpost.php" enctype="multipart/form-data">
                 <fieldset class="window">
                     <div class="input-group mb-3">
@@ -46,6 +47,7 @@ include '../controllers/addpostCtrl.php';
                                 <p class="text-danger"><?= isset($formError['content']) ? $formError['content'] : '' ?></p>
                             </div>
                         </div>
+                        <!--                        Select pour récupérer l'Id de l'oeuvre-->
                         <div class="form-row">
                             <label for="id_cine_medias" class="col-sm-offset-2 col-sm-4 col-form-label">Choisir une oeuvre à analyser: </label>
                             <div class="col-sm-offset-2 col-sm-4">

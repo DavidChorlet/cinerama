@@ -44,6 +44,7 @@ include '../controllers/postUpdateCtrl.php';
                 ?>
                 <p class="text-danger">Désolé, mais vos modifications n'ont pu être enregistrées.</p>
             <?php } ?>
+<!--                Formulaire de mise à jour d'un article, la récupération se fait via l'Id-->
                 <form method="POST" action="postUpdate.php?id=<?= $posts->id ?>" enctype="multipart/form-data" >
                 <fieldset class="window">
                     <div class="form-group">
@@ -75,4 +76,4 @@ include '../controllers/postUpdateCtrl.php';
                     </div>
                 </fieldset>
             </form>
-            <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>

@@ -1,4 +1,5 @@
 <?php
+
 $medias = new medias();
 //déclaration des regex :
 $nameRegex = "/([a-zA-Z\- ])/";
@@ -15,22 +16,22 @@ if (isset($_POST['submit'])) {
         // On gère ici la taille en Octets le poids de notre image
         // ici donc environ 5Mo.
         $tailleMax = 5097152;
-        // on declare un tableau pour les extensions autorisées
+        // On declare un tableau pour les extensions autorisées
         $extensionsValides = ['jpg', 'jpeg', 'gif', 'png'];
-        // on récupère et on compare le poids de l'image avec ce que l'on autorise
+        // On récupère et on compare le poids de l'image avec ce que l'on autorise
         if ($_FILES['affiche']['size'] <= $tailleMax) {
-            // on récupere ici l'extension de notre image passée
+            // On récupere ici l'extension de notre image passée
             // strtolower ==> passe tous les caractères en minuscules au cas ou
             // substr ==> on enlève le nom de notre image
             // strrchr ==> on récupère la dernière occurence de notre fichier après le point exemple ==> png
             $extensionUpload = strtolower(substr(strrchr($_FILES['affiche']['name'], '.'), 1));
-            // on compare avec notre tableau d'extensions autorisées si c'est bon on continu
+            // On compare avec notre tableau d'extensions autorisées si c'est bon on continue.
             if (in_array($extensionUpload, $extensionsValides)) {
 
-                // on déclare le chemin de notre dossier qui va recevoir nos images
+                // On déclare le chemin de notre dossier qui va recevoir nos images.
                 $path = 'uploadAffiche/' . str_replace(' ', '-', $_FILES['affiche']['name']);
                 // Comme c'est OK on envoie notre image dans notre dossier upload.
-                $resultat = move_uploaded_file($_FILES['affiche']['tmp_name'], '../assets/'.$path);
+                $resultat = move_uploaded_file($_FILES['affiche']['tmp_name'], '../assets/' . $path);
                 if ($resultat) {
                     $picture = $path;
                 } else {
@@ -43,15 +44,15 @@ if (isset($_POST['submit'])) {
             $formError['affiche'] = '- Votre photo ne doit pas dépasser 5Mo.';
         }
     } else {
-        // si le champ est vide nous  renvoyons l'information en BDD
+        // Si le champ est vide nous renvoyons l'information en BDD
         $picture = $medias->picture;
     }
 
-    //si $_POST['lastname'] existe
+    //Si $_POST['title'] existe
     if (isset($_POST['title'])) {
-        //si $_POST['lastname'] n'est pas vide
+        //si $_POST['title'] n'est pas vide
         if (!empty($_POST['title'])) {
-            //on vérifie si $_POST['lastname'] respecte la regex
+            //on vérifie si $_POST['title'] respecte la regex
             if (preg_match($nameRegex, $_POST['title'])) {
                 $title = htmlspecialchars($_POST['title']);
                 //sinon on stock un message dans le tableau formError    
@@ -84,12 +85,12 @@ if (isset($_POST['submit'])) {
             $formError['content'] = 'Erreur, veuillez remplir le champ.';
         }
     }
-    
-    //si mon tableau ne contient aucune erreur
+
+    //Si mon tableau ne contient aucune erreur
     if (count($formError) == 0) {
-        //Instanciation de l'objet patients. 
-        //$patients devient une instance de la classe patients.
-        //la méthode magique construct est appelée automatiquement grâce au mot clé new.
+        //Instanciation de l'objet medias. 
+        //$medias devient une instance de la classe medias.
+        //La méthode magique construct est appelée automatiquement grâce au mot clé new.
         $medias = new medias();
         $medias->title = $title;
         $medias->director = $director;

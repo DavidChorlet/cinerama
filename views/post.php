@@ -42,6 +42,7 @@ if (isset($resultList)) {
                         </tr>
                     </thead>
                     <tbody>
+<!--                        Boucle foreach pour parcourir la liste des articles-->
                         <?php foreach ($postsList as $posts) { ?>
                             <tr>
                                 <td><?= $posts->title ?></td>

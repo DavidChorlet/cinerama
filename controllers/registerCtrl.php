@@ -6,8 +6,6 @@ if (isset($_POST['mailTest'])) { //Appel AJAX pour le mail.
     $user->mail = htmlspecialchars($_POST['mailTest']);
     echo $user->checkFreeMail();
 } else { //Validation du formulaire
-
-
     $user = new users();
 //J'initialise mon tableau d'erreur.
     $formError = array();

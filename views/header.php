@@ -26,6 +26,7 @@ include '../controllers/headerCtrl.php';
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
                     </li>
+                    <!--                    Navbar quand l'utilisateur est connecté-->
                     <?php if (isset($_SESSION['isConnect']) && $_SESSION['isConnect']) { ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,6 +37,7 @@ include '../controllers/headerCtrl.php';
                                 <a class="dropdown-item" href="media.php">Modifier/Supprimer une oeuvre</a>
                                 <a class="dropdown-item" href="addpost.php">Créer un article</a>
                                 <a class="dropdown-item" href="post.php">Modifier/Supprimer un article</a>
+                                <a class="dropdown-item" href="addcomment.php">Ajouter un commentaire</a>
                                 <a class="dropdown-item" href="profile.php">Accèder à son profil</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="?action=deconnexion">Déconnexion</a>
@@ -50,6 +52,7 @@ include '../controllers/headerCtrl.php';
                         <li class="nav-item active">
                             <a class="nav-link" href="usersList.php">Liste des utilisateurs<span class="sr-only">(current)</span></a>
                         </li>
+                        <!--                        Navbar qui s'affiche pour un simple visiteur-->
                     <?php } else { ?>
                         <li class="nav-item active">
                             <a class="nav-link" href="login.php">Connexion<span class="sr-only">(current)</span></a>
@@ -70,3 +73,4 @@ include '../controllers/headerCtrl.php';
                 </ul>
             </div>
         </nav>
+    </header>

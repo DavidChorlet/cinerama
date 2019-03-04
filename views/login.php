@@ -8,6 +8,7 @@ include '../controllers/loginCtrl.php';
             <div class="hat">
                 <h1>Se connecter</h1>
             </div>
+<!--            Formulaire de connexion-->
             <form method="POST" action="#">
                 <fieldset class="window">
                     <div class="form-group">
@@ -27,4 +28,4 @@ include '../controllers/loginCtrl.php';
 </div>
 <?php
 include 'footer.php';
-?>    
+?>

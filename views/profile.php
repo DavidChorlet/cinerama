@@ -51,6 +51,7 @@ if ($isError) {
     ?>
     <p class="text-danger">Désolé, mais vos modifications n'ont pu être enregistrées...</p>
 <?php } ?>
+<!--    Formulaire de mise à jour du profil-->
 <form method="POST" action="profile.php?id=<?= $users->id ?>">
     <fieldset class="window">
         <div class="form-group">
