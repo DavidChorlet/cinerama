@@ -11,7 +11,7 @@ if (!empty($_GET['idDelete'])) {
 $isUser = FALSE;
 if (!empty($_GET['id'])) {
     $users->id = htmlspecialchars($_GET['id']);
-    $isUser = $users->profileUser();
+    $isUser = $users->profileUpdate();
 }
 
 //Déclaration des regex :

@@ -12,7 +12,7 @@ include '../controllers/postUpdateCtrl.php';
                 <h1>Fiche de l'article</h1>
             </div>
             <div class="table-responsive">
-                <table class="table">
+                <table class="responsive">
                     <thead>
                         <tr>
                             <th scope="col">Titre de l'article</th>
@@ -44,18 +44,22 @@ include '../controllers/postUpdateCtrl.php';
                 ?>
                 <p class="text-danger">Désolé, mais vos modifications n'ont pu être enregistrées.</p>
             <?php } ?>
+        </div>
+    </div>
+</div>
 <!--                Formulaire de mise à jour d'un article, la récupération se fait via l'Id-->
+<div class="container">
                 <form method="POST" action="postUpdate.php?id=<?= $posts->id ?>" enctype="multipart/form-data" >
                 <fieldset class="window">
                     <div class="form-group">
                         <div class="input-group mb-3">
                         <label for="title" class="col-sm-2 col-form-label">Affiche/Couverture</label>
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Image illustrative</span>
+                            <span class="input-group-text" id="inputGroupFileAddon01">Image</span>
                         </div>
                         <div class="custom-file">
                             <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choisir un fichier d'illustration</label>
+                            <label class="custom-file-label" for="inputGroupFile01">Fichier</label>
                         </div>
                     </div>
                         <div class="form-row">             
@@ -76,4 +80,5 @@ include '../controllers/postUpdateCtrl.php';
                     </div>
                 </fieldset>
             </form>
+</div>
 <?php include 'footer.php'; ?>

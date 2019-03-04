@@ -16,6 +16,7 @@ include '../controllers/headerCtrl.php';
         <title>Cinerama</title>
     </head>
     <header>
+
         <nav class="navbar navbar-expand-lg navbar-white bg-dark">
             <a class="navbar-brand" href="index.php">[ Cinerama ]</a>
 

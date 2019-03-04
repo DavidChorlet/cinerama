@@ -37,8 +37,8 @@ if (isset($resultList)) {
                         <tr>
                             <th scope="col">Titre</th>
                             <th scope="col">Contenu</th>
-                            <th scope="col">Modifier cet article</th>
-                            <th scope="col">Supprimer cet article</th>
+                            <th scope="col">Modification</th>
+                            <th scope="col">Suppression</th>
                         </tr>
                     </thead>
                     <tbody>

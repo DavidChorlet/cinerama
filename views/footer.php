@@ -84,6 +84,9 @@
         </div>
         <!--Grid row-->
     </div>
+    <div id="scrollUp">
+        <a href="#top"><img src="../assets/pictures/fleche.png"/></a>
+    </div>
     <!-- Footer Elements -->
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2019 Copyright:

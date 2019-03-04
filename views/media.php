@@ -39,8 +39,8 @@ if (isset($resultList)) {
                             <th scope="col">Oeuvre</th>
                             <th scope="col">Real/Auteur</th>
                             <th scope="col">Résumé</th>
-                            <th scope="col">Modifier cette fiche</th>
-                            <th scope="col">Supprimer cette fiche</th>
+                            <th scope="col">Modification</th>
+                            <th scope="col">Suppression</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,7 +50,7 @@ if (isset($resultList)) {
                                 <td><?= $medias->director ?></td>
                                 <td><?= $medias->content ?></td>
                                 <td><a class="btn blue-gradient btn-lg btn-block" href="mediaUpdate.php?id=<?= $medias->id ?>">Modification</a></td>
-                                <td><a class="btn blue-gradient-rgba btn-lg btn-block" href="media.php?idDelete=<?= $medias->id ?>">Supprimer cette fiche</a></td>
+                                <td><a class="btn blue-gradient-rgba btn-lg btn-block" href="media.php?idDelete=<?= $medias->id ?>">Suppression</a></td>
                             </tr>
                         <?php } ?>                 
                     </tbody>
