@@ -18,7 +18,7 @@ include '../controllers/postUpdateCtrl.php';
                             <th scope="col">Titre de l'article</th>
                             <th scope="col">Contenu</th>
                             <th scope="col">Image</th>
-                            </tr>
+                        </tr>
                     </thead>
                     <?php if ($isPost) { ?>
                         <tbody>
@@ -49,36 +49,55 @@ include '../controllers/postUpdateCtrl.php';
 </div>
 <!--                Formulaire de mise à jour d'un article, la récupération se fait via l'Id-->
 <div class="container">
-                <form method="POST" action="postUpdate.php?id=<?= $posts->id ?>" enctype="multipart/form-data" >
-                <fieldset class="window">
-                    <div class="form-group">
-                        <div class="input-group mb-3">
-                        <label for="title" class="col-sm-2 col-form-label">Affiche/Couverture</label>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Image</span>
-                        </div>
-                        <div class="custom-file">
-                            <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Fichier</label>
-                        </div>
+    <form method="POST" action="postUpdate.php?id=<?= $posts->id ?>" enctype="multipart/form-data" >
+        <fieldset class="window">
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <label for="title" class="col-sm-2 col-form-label">Affiche/Couverture</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Image</span>
                     </div>
-                        <div class="form-row">             
-                            <label for="title" class="col-sm-2 col-form-label">Titre</label>
-                            <div class="col-sm-10">
-                                <input name="title" type="text" class="form-control" id="title" placeholder="Votre nouveau titre" value="<?= isset($title) ? $title : '' ?>"/>
-                                <p class="text-danger"><?= isset($formError['title']) ? $formError['title'] : '' ?></p>
-                            </div>
-                        </div>
-                        <div class="form-row">             
-                            <label for="content" class="col-sm-2 col-form-label">Nouveau Texte</label>
-                            <div class="col-sm-10">
-                                <textarea name="content" type="text" class="form-control" id="content" value="<?= isset($content) ? $content : '' ?>"></textarea>
-                                <p class="text-danger"><?= isset($formError['content']) ? $formError['content'] : '' ?></p>
-                            </div>
-                        </div>
-                        <input class="btn btn-black" type="submit" value="Valider votre contribution" name='submit'/>
+                    <div class="custom-file">
+                        <input name="affiche" type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Fichier</label>
                     </div>
-                </fieldset>
-            </form>
+                </div>
+                <div class="form-row">             
+                    <label for="title" class="col-sm-2 col-form-label">Titre</label>
+                    <div class="col-sm-10">
+                        <input name="title" type="text" class="form-control" id="title" placeholder="Votre nouveau titre" value="<?= isset($title) ? $title : '' ?>"/>
+                        <p class="text-danger"><?= isset($formError['title']) ? $formError['title'] : '' ?></p>
+                    </div>
+                </div>
+                <div class="form-row">             
+                    <label for="content" class="col-sm-2 col-form-label">Nouveau Texte</label>
+                    <div class="col-sm-10">
+                        <textarea name="content" type="text" class="form-control" id="content" value="<?= isset($content) ? $content : '' ?>"></textarea>
+                        <p class="text-danger"><?= isset($formError['content']) ? $formError['content'] : '' ?></p>
+                    </div>
+                </div>
+                <input class="btn btn-black" type="submit" value="Valider votre contribution" name='submit'/>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="hat">
+    <h1>Ajouter un commentaire</h1>
+</div>
+<div class="container">
+    <form method="POST" action="postUpdate.php">
+        <fieldset class="window">
+            <div class="form-group">
+                <div class="form-row">
+                    <label for="text" class="col-sm-2 col-form-label">Ajouter votre commentaire</label>
+                    <div class="col-sm-10">
+                        <textarea name="text" type="text" class="form-control" id="text" value="<?= isset($text) ? $text : '' ?>"></textarea>
+                        <p class="text-danger"><?= isset($formError['text']) ? $formError['text'] : '' ?></p>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" name="login" class="btn btn-dark">Valider</button>
+        </fieldset>
+    </form>
 </div>
 <?php include 'footer.php'; ?>

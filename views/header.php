@@ -42,7 +42,6 @@ include '../controllers/headerCtrl.php';
                                 <a class="dropdown-item" href="media.php">Modifier/Supprimer une oeuvre</a>
                                 <a class="dropdown-item" href="addpost.php">Créer un article</a>
                                 <a class="dropdown-item" href="post.php">Modifier/Supprimer un article</a>
-                                <a class="dropdown-item" href="addcomment.php">Ajouter un commentaire</a>
                                 <a class="dropdown-item" href="profile.php">Accèder à son profil</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="?action=deconnexion">Déconnexion</a>

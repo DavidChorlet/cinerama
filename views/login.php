@@ -18,7 +18,6 @@ include '../controllers/loginCtrl.php';
             <div class="form-group">
                 <label for="mail">Mail:</label>
                 <input type="mail" name="mail" class="form-control" id="mail"  placeholder="Renseignez votre mail" />
-                <div class="mailMessage"></div>
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe:</label>

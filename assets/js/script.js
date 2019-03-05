@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
 });
 
-//rend les tableaux responsifs
+//Rend les tableaux responsifs
 document.querySelectorAll('.table-responsive').forEach(function (table) {
     let labels = Array.from(table.querySelectorAll('th')).map(function (th) {
         return th.innerText
@@ -41,7 +41,7 @@ document.querySelectorAll('.table-responsive').forEach(function (table) {
     })
 })
 
-//appel bouton vers haut de page
+//Appel bouton vers haut de page
 jQuery(function () {
     $(function () {
         $(window).scroll(function () { //Fonction appelée quand on descend la page

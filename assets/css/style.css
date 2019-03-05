@@ -23,7 +23,6 @@ h1{
 }
 footer{
     padding-top: 10px;
-    padding-bottom: 10px;
 }
 .card{
     text-align: center;
@@ -97,7 +96,7 @@ legend{
 th{
     border: 4px solid #3041A1;
     border-collapse: collapse;
-    background-color: #80cbc4;
+    background-color: #5480B7;
     color: black;
     width: 150;
     text-align: justify;

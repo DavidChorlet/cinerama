@@ -4,7 +4,7 @@ class comments extends database {
 
     public $id = 0;
     public $text = '';
-    public $addDate = '0000-00-00 00:00:00';
+    public $dateHour = '0000-00-00 00:00:00';
     public $id_cine_posts = 0;
     public $id_cine_users = 0;
     protected $db;
@@ -15,14 +15,33 @@ class comments extends database {
 
     //Méthode permettant d'ajouter un commentaire dans la base de données.
     public function addComments() {
-        $query = 'INSERT INTO `cine_comments` (`text`,`addDate`, `id_cine_posts`,`id_cine_users`) '
-                . 'VALUES (:text, :addDate, :id_cine_posts, `id_cine_users`)';
+        $query = 'INSERT INTO `cine_comments` (`text`,`dateHour`, `id_cine_posts`,`id_cine_users`) '
+                . 'VALUES (:text, :dateHour, :id_cine_posts, :id_cine_users)';
         $queryResult = $this->db->prepare($query);
         $queryResult->bindValue(':text', $this->text, PDO::PARAM_STR);
-        $queryResult->bindValue(':addDate', $this->addDate, PDO::PARAM_STR);
+        $queryResult->bindValue(':dateHour', $this->dateHour, PDO::PARAM_STR);
         $queryResult->bindValue(':id_cine_posts', $this->id_cine_posts, PDO::PARAM_INT);
         $queryResult->bindValue(':id_cine_users', $this->id_cine_users, PDO::PARAM_INT);
         return $queryResult->execute();
+    }
+
+    //méthode permettant d'afficher les commentaires d'après l'id d'un article.
+    public function getCommentsByPost() {
+        $result = array();
+        $query = 'SELECT `cine_users`.`nickname`'
+                . '`cine_comments`.`id_cine_users`, '
+                . '`cine_comments`.`id`, `cine_comments`.`text`, `cine_comments`.`id_cine_posts`, '
+                . 'DATE_FORMAT(`cine_comments`.`dateHour`, "%d-%b-%Y") AS `date`, '
+                . 'DATE_FORMAT(`cine_comments`.`dateHour`, "%H:%i") AS `hour` '
+                . 'FROM `cine_comments` INNER JOIN `cine_users` '
+                . 'ON `cine_comments`.`id_cine_users` = `cine_users`.`id` '
+                . 'WHERE `cine_comments`.`id_cine_posts` = :id_cine_posts';
+        $queryResult = $this->db->prepare($query);
+        $queryResult->bindValue(':id_cine_posts', $this->id_cine_posts, PDO::PARAM_INT);
+        if ($queryResult->execute()) {
+            $result = $queryResult->fetchAll(PDO::FETCH_OBJ);
+        }
+        return $result;
     }
 
     //Méthode permettant de récuperer la liste des commentaires.

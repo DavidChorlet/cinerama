@@ -98,3 +98,57 @@ if (isset($_POST['submit'])) {
         }
     }
 }
+
+
+$comments = new comments();
+
+$comments->id_cine_posts = $posts->id;
+$isComment = $comments->getCommentsByPost();
+//déclaration des regex :
+$nameRegex = "/([a-zA-Z\- ])/";
+//création d'un tableau où l'on vient stocker les erreurs :
+$formError = array();
+$isSuccess = FALSE;
+$isError = FALSE;
+$dateHour = date('Y-m-d H:i:s');
+
+
+//si le submit existe
+if (isset($_POST['submit'])) {
+    //Si $_POST['text'] existe
+    if (isset($_POST['text'])) {
+        //si $_POST['text'] n'est pas vide
+        if (!empty($_POST['text'])) {
+            //on vérifie si $_POST['text'] respecte la regex
+            if (preg_match($nameRegex, $_POST['text'])) {
+                $text = htmlspecialchars($_POST['text']);
+                //sinon on stock un message dans le tableau formError    
+            } else {
+                $formError['text'] = 'Saisie invalide.';
+            }
+        } else {
+            $formError['text'] = 'Erreur, veuillez remplir le champ.';
+        }
+    }
+
+
+    //Si mon tableau ne contient aucune erreur
+    if (count($formError) == 0) {
+        //Instanciation de l'objet comments. 
+        //$comments devient une instance de la classe comments.
+        //La méthode magique construct est appelée automatiquement grâce au mot clé new.
+        $comments = new comments();
+        $comments->text = $text;
+        $comments->dateHour = $dateHour;
+        $comments->id_cine_posts = $_GET['id'];
+        $comments->id_cine_users = $_SESSION['id'];
+
+        if ($comments->addComments()) {
+            $isSuccess = TRUE;
+            header('Location:postUpdate.php?id=' . $posts->id);
+            exit();
+        } else {
+            $isError = TRUE;
+        }
+    }
+}

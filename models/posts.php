@@ -77,4 +77,5 @@ class posts extends database {
         $deletePost->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $deletePost->execute();
     }
+
 }
