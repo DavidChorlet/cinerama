@@ -79,4 +79,29 @@ class medias extends database {
         $deletemedia->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $deletemedia->execute();
     }
+
+    //méthode pour créer une pagination des médias.
+    public $mediasPerPage = 5;
+
+    public function paging() {
+        $query = 'SELECT COUNT(`id`) FROM `cine_medias` ';
+        $total = $this->db->query($query)->fetchColumn();
+        $result = ceil($total / $this->mediasPerPage);
+        return $result;
+    }
+
+    public function getMediasForPaging() {
+        $query = 'SELECT `id`, `title`, `director`, `content`, `picture` '
+                . 'FROM `cine_medias` '
+                . 'ORDER BY `id` asc LIMIT :page, ' . $this->mediasPerPage;
+        $queryResult = $this->db->prepare($query);
+        $queryResult->bindValue(':page', $this->id, PDO::PARAM_INT);
+        $queryResult->execute();
+        $result = $queryResult->fetchAll(PDO::FETCH_OBJ);
+        if (is_object($result)) {
+            $this->id = $result->id;
+        }
+        return $result;
+    }
+
 }

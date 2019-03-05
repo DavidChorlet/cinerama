@@ -4,7 +4,6 @@ include '../models/posts.php';
 include '../models/medias.php';
 include '../controllers/mediasListCtrl.php';
 ?>
-
 <div class="row">
     <div class="text-center col-12">
         <div class="hat">
@@ -45,6 +44,26 @@ if (isset($resultList)) {
             ?>
         </div>
     </div>
+</div>
+<div>
+    <nav aria-label="navigation-simple">
+        <ul class="pagination">
+            <?php
+            for ($i = 1; $i <= $page; $i++) :
+                isset($_GET['page']) ? $_GET['page'] : $_GET['page'] = 1;
+                if ($_GET['page'] != $i) :
+                    ?>
+                    <li class="page-item"><a class="page-link text-danger" href="mediasList.php?page=<?= $i ?>"><?= $i ?></a></li>
+                    <?php
+                else :
+                    ?>
+                    <li class="page-item disabled page-link text-dark"> <?= $i ?></li>
+                    <?php
+                    endif;
+                endfor;
+                ?>
+        </ul>
+    </nav>
 </div>
 <?php include 'footer.php';
 ?>

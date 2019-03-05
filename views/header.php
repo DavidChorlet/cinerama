@@ -16,7 +16,6 @@ include '../controllers/headerCtrl.php';
         <title>Cinerama</title>
     </head>
     <header>
-
         <nav class="navbar navbar-expand-lg navbar-white bg-dark">
             <a class="navbar-brand" href="index.php">[ Cinerama ]</a>
 
@@ -48,10 +47,10 @@ include '../controllers/headerCtrl.php';
                             </div>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="postsList.php">Liste des articles<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="mediasList.php">Liste des oeuvres<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="mediasList.php">Liste des films<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="postsList.php">Liste des articles<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="usersList.php">Liste des utilisateurs<span class="sr-only">(current)</span></a>
@@ -65,10 +64,10 @@ include '../controllers/headerCtrl.php';
                             <a class="nav-link" href="register.php">Inscription <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="postsList.php">Liste des articles<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="mediasList.php">Liste des oeuvres<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="mediasList.php">Liste des films<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="postsList.php">Liste des articles<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="usersList.php">Liste des utilisateurs<span class="sr-only">(current)</span></a>
